@@ -45,10 +45,12 @@ class AuthYouTube extends React.Component{
                 this.setState({uid: user.uid})
                 
                 const cookies = new Cookies();
-                const returnToken = cookies.get('ytAuthReturn', { path: '/', domain: 'https://smauthlanding.herokuapp.com' })
+                const returnToken = cookies.get('ytAuthReturn', { path: '/', domain: 'https://smauthlanding.herokuapp.com/' })
+                const returnToken2 = cookies.get('ytAuthReturn', { path: '/' })
 
                 console.log('returnToken')
                 console.log(returnToken)
+                console.log(returnToken2)
                 this.parseToken(returnToken)
             } else {
               console.log("NO logged in")
