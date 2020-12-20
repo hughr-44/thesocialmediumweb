@@ -45,7 +45,7 @@ class AuthYouTube extends React.Component{
                 this.setState({uid: user.uid})
                 
                 const cookies = new Cookies();
-                const returnToken = cookies.get('ytAuthReturn', { path: 'https://smauthlanding.herokuapp.com/' })
+                const returnToken = cookies.get('ytAuthReturn', { path: '/', domain: 'https://smauthlanding.herokuapp.com' })
 
                 console.log('returnToken')
                 console.log(returnToken)
