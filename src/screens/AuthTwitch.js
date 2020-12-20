@@ -69,7 +69,8 @@ class AuthTwitch extends React.Component{
         }
 
         const cookies = new Cookies();
-        cookies.set('twitchToken', authToken)
+        //cookies.set('twitchToken', authToken)
+        cookies.set('twitchToken', authToken, { path: '/' })
 
         const collPath = '/mainCollection/' + this.state.uid +'/twitchInfo'
         firebase.database().ref(collPath).update({

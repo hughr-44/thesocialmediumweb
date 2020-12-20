@@ -88,7 +88,7 @@ class AuthYouTube extends React.Component{
             })
 
             const cookies = new Cookies()
-            cookies.set('ytToken', ytToken)
+            cookies.set('ytToken', ytToken, { path: '/' })
         })
         .catch(error=>console.log(error))
 
