@@ -43,7 +43,7 @@ class AuthInstagram extends React.Component{
                 this.setState({uid: user.uid})
                 
                 const cookies = new Cookies();
-                const returnToken = cookies.get('igAuthReturn')
+                const returnToken = cookies.get('igAuthReturn', { path: 'https://smauthlanding.herokuapp.com/' })
 
                 console.log('returnToken')
                 console.log(returnToken)
