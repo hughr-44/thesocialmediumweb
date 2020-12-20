@@ -63,7 +63,11 @@ class AuthYouTube extends React.Component{
     }
     
     parseToken(returnToken){
-        const returnUrl = returnToken
+        //const returnUrl = returnToken
+        const returnUrl = window.location.href
+        console.log("checking window")
+        console.log(returnUrl)
+        console.log(window.location.href)
         var authToken = ''
         for(var i=0; i<returnUrl.length; i++){
             var currSubstring = returnUrl.substr(i, 5)
