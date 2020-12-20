@@ -93,12 +93,12 @@ class LoadSocials extends React.Component{
         }.bind(this));
 
         const cookies = new Cookies();
-        const ytToken = cookies.get('ytToken', { path: 'https://smauthlanding.herokuapp.com/' })
+        const ytToken = cookies.get('ytToken')
 
         console.log('yt token')
         console.log(ytToken)
 
-        const twitchToken = cookies.get('twitchToken', { path: 'https://smauthlanding.herokuapp.com/' })
+        const twitchToken = cookies.get('twitchToken')
 
         console.log('twitch token')
         console.log(twitchToken)

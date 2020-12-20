@@ -59,7 +59,9 @@ class AuthInstagram extends React.Component{
     }
 
     parseToken(returnToken){
-        const returnUrl = returnToken
+        const returnUrl = window.location.href
+        console.log("checking window")
+        console.log(returnUrl)
         var authToken = ''
         for(var i=0; i<returnUrl.length; i++){
             var currSubstring = returnUrl.substr(i, 5)
