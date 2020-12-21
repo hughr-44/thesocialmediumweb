@@ -20,7 +20,7 @@ class AuthYouTube extends React.Component{
 
         this.state = {
             email: "",
-            uid: "",
+            uid: firebase.auth().currentUser.uid,
             password: "",
             errorMessage: null,
             twitterName: "",
