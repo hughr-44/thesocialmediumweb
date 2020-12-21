@@ -54,7 +54,10 @@ class AuthYouTube extends React.Component{
                 this.parseToken(returnToken)
             } else {
               console.log("NO logged in")
-              this.props.history.push("/OpenScreen");
+
+              this.parseToken("temp")
+
+              //this.props.history.push("/OpenScreen");
             }
         }.bind(this));
 
