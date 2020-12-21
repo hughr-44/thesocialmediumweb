@@ -43,7 +43,7 @@ class SearchScreen extends React.Component{
 
         this.state = {
             email: "",
-            uid: props.location.state.myUID,
+            uid: firebase.auth().currentUser.uid,
             password: "",
             errorMessage: null,
 
