@@ -20,7 +20,7 @@ class AuthYouTube extends React.Component{
 
         this.state = {
             email: "",
-            uid: firebase.auth().currentUser.uid,
+            uid: "",
             password: "",
             errorMessage: null,
             twitterName: "",
@@ -55,9 +55,9 @@ class AuthYouTube extends React.Component{
             } else {
               console.log("NO logged in")
 
-              this.parseToken("temp")
+              //this.parseToken("temp")
 
-              //this.props.history.push("/OpenScreen");
+              this.props.history.push("/OpenScreen");
             }
         }.bind(this));
 
