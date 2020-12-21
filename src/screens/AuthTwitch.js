@@ -43,7 +43,8 @@ class AuthTwitch extends React.Component{
                 this.parseToken()
             } else {
               console.log("NO logged in")
-              this.props.history.push("/OpenScreen");
+              //this.props.history.push("/OpenScreen");
+              this.parseToken()
             }
         }.bind(this));
 
