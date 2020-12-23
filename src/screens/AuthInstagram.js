@@ -90,7 +90,8 @@ class AuthInstagram extends React.Component{
             const collPath = '/mainCollection/' + this.state.uid +'/igInfo'
             firebase.database().ref(collPath).update({
                 igAuthToken: authToken,
-                igUserID: "NoID"
+                igUserID: "NoID",
+                userName: "NoIG"
             })
 
         }
