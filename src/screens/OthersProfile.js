@@ -230,7 +230,7 @@ class OthersProfile extends React.Component{
               const postsID = posts[i].permalink
               const trimID = postsID.substr(postsID.length - 12, 11)
               //const igRow = <InstagramComponent key={trimID} postID={trimID}/> 
-              const igRow = <InstagramComponent postID={trimID} name={posts[i].username} mediaUrl={posts[i].media_url}/> 
+              const igRow = <InstagramComponent postID={trimID} name={posts[i].username} mediaUrl={posts[i].media_url} myUID={this.props.location.state.pastState.myUID}/> 
               newRows.push(igRow)
           }
           //this.setState({igPosts: newRows})
@@ -263,7 +263,7 @@ class OthersProfile extends React.Component{
             for(var i=0; i<responseJson.data.data.length; i++){
                 console.log(responseJson.data.data[i])
                 //const twitRow = <TwitterComponent twitterName="wheezyoutcast" postNum={responseJson.data[i].id}/>
-                const twitRow = <TwitterComponent twitterName={twitterName} postNum={responseJson.data.data[i].id}/>
+                const twitRow = <TwitterComponent twitterName={twitterName} postNum={responseJson.data.data[i].id} myUID={this.props.location.state.pastState.myUID}/>
                 newRows.push(twitRow)
             }
 
