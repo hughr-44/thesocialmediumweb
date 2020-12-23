@@ -727,7 +727,7 @@ class FollowOverlay extends React.Component {
     }
 
     checkFollows(){
-        const collPath = '/usersFollows/' + this.state.loggedUID
+        const collPath = '/usersFollows/' + this.state.uid
         console.log("checking follows")
         console.log(collPath)
 
