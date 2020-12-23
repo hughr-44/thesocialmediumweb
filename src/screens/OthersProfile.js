@@ -449,7 +449,7 @@ class OthersProfile extends React.Component{
             followsList.push(this.props.location.state.usersUid)
             //followsList.push("testUID")
     
-            const collPath = '/mainCollection/' + this.state.uid
+            const collPath = '/mainCollection/' + this.props.location.state.pastState.myUID
             firebase.database().ref(collPath).update({
                 inAppFollows: followsList
             })
@@ -523,7 +523,7 @@ class OthersProfile extends React.Component{
                                     aria-describedby="simple-modal-description"
                                 >
                                     
-                                    <FollowOverlay platform="exists" userName={this.state.displayName}  myUID={this.state.uid} userCheck={this.state.displayName}/>
+                                    <FollowOverlay platform="exists" userName={this.state.displayName}  myUID={this.state.uid} userCheck={this.state.displayName} loggedUID={this.props.location.state.pastState.myUID}/>
                                     
                                 </Modal>
                                            

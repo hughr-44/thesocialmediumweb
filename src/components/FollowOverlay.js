@@ -697,7 +697,7 @@ class FollowOverlay extends React.Component {
     checkFollowsInApp(){
 
         console.log("getting follows")
-        const collPath = '/mainCollection/'+ this.state.uid
+        const collPath = '/mainCollection/'+ this.props.loggedUID
         var follows = []
         firebase.database().ref(collPath).once('value').then((snapshot) => {
             follows = snapshot.child('inAppFollows').val()
@@ -721,7 +721,7 @@ class FollowOverlay extends React.Component {
     }
 
     checkFollows(){
-        const collPath = '/usersFollows/' + this.state.uid
+        const collPath = '/usersFollows/' + this.props.loggedUID
         console.log("checking follows")
         console.log(collPath)
 
