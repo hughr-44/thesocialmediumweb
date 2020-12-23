@@ -389,6 +389,11 @@ class LoadSocials extends React.Component{
             this.setState({youtubeID: chanID})
             this.setState({youtubeName: chanName})
 
+            console.log("YOUTUBE NAME")
+            console.log(chanName)
+            console.log(responseJson.items[0].snippet.channelTitle)
+            console.log(responseJson.items[0].snippet)
+
             const channelDescription = responseJson.items[0].snippet.description
 
             console.log(playlistURL)
