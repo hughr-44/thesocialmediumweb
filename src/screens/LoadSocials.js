@@ -850,18 +850,21 @@ class LoadSocials extends React.Component{
                    })
                    .then(async ()=>{
                     //this.setTwitterName()
-                    //const sortedIg = this.sortIg()
-                    //const igRows = await this.createIgRows(sortedIg)
+                    const sortedIg = this.sortIg()
+                    const igRows = await this.createIgRows(sortedIg)
 
+                    /*
                     if(i + 1 == follows.length){
                         console.log("done ig follows")
             
+                        this.setTwitterName()
                         const sortedIg = this.sortIg()
                         const igRows = await this.createIgRows(sortedIg)
                     }
                     else{
                         console.log("continuing follows ig posts")
                     }
+                    */
 
                    })
                    .catch(error=>console.log(error)) //to catch the errors if any
@@ -1061,7 +1064,7 @@ class LoadSocials extends React.Component{
 
 
 
-                    //const sortedTweets = this.sortTweets()
+                    const sortedTweets = this.sortTweets()
     
                 })
                 }
@@ -1071,9 +1074,11 @@ class LoadSocials extends React.Component{
 
             })
 
+            /*
             if(i + 1 == follows.length){
                 const sortedTweets = this.sortTweets()
             }
+            */
         }
         //const sortedTweets = this.sortTweets()
         this.leaveLoading()
