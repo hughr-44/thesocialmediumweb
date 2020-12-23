@@ -74,6 +74,12 @@ class FollowOverlay extends React.Component {
     };
 
     async componentDidMount(){
+
+        console.log("UID CHECKS")
+        console.log(this.props.myUID)
+        console.log(this.props.loggedUID)
+        console.log(this.props.location.state.pastState.myUID)
+
         if(this.props.platform == 'exists'){
             this.startFollowOnApp()
         }
