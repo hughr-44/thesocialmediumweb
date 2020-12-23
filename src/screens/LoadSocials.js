@@ -857,6 +857,7 @@ class LoadSocials extends React.Component{
                         console.log("done ig follows")
             
                         const sortedIg = this.sortIg()
+                        const igRows = await this.createIgRows(sortedIg)
                     }
                     else{
                         console.log("continuing follows ig posts")
