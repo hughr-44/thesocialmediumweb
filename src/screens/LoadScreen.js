@@ -108,10 +108,6 @@ class LoadScreen extends React.Component{
                         <Button onClick={this.authTwitch} style={button}><h4 style={textStyle}>Auth</h4></Button>
                     </Row>
 
-                    <Row style={{display: 'flex', justifyContent: 'center'}}>
-                        <Button onClick={this.skipTwitch} style={button}><h4 style={textStyle}>Skip Twitch</h4></Button>
-                    </Row>
-
                 </Container>
 
             </div>

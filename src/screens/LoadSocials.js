@@ -684,7 +684,8 @@ class LoadSocials extends React.Component{
             this.setState({igUserID: newYt.igUserID})
 
             if(newYt.igAuthToken == "NA"){
-                console.log("no twitch account")
+                console.log("no ig account")
+                this.getFollowsIgPosts()
             }
             else{
                 this.getIgPost(this.state.igUserID, this.state.igToken)
