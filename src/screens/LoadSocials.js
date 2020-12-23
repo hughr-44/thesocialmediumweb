@@ -848,7 +848,7 @@ class LoadSocials extends React.Component{
 
                     this.setState({followsIgPosts: combinedList})
                    })
-                   .then(()=>{
+                   .then(async ()=>{
                     //this.setTwitterName()
                     //const sortedIg = this.sortIg()
                     //const igRows = await this.createIgRows(sortedIg)
