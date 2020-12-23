@@ -1064,7 +1064,7 @@ class LoadSocials extends React.Component{
 
 
 
-                    //const sortedTweets = this.sortTweets()
+                    const sortedTweets = this.sortTweets()
     
                 })
                 }
@@ -1074,12 +1074,12 @@ class LoadSocials extends React.Component{
 
             })
 
-            
+            /*
             if(i + 1 == follows.length){
                 console.log("SORTING TWEETS")
                 const sortedTweets = this.sortTweets()
             }
-            
+            */
         }
         //const sortedTweets = this.sortTweets()
         this.leaveLoading()
