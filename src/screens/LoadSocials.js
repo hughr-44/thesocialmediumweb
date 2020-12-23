@@ -1147,7 +1147,7 @@ class LoadSocials extends React.Component{
         firebase.database().ref(collPath9).update({
             displayName: this.state.displayName,
             twitchName: this.state.twitchName,
-            //youtubeName: this.state.userInfo.user.name,
+            youtubeName: this.state.youtubeName,
             youtubeID: this.state.youtubeID,
             igName: this.state.myIgName,
             igUserID: this.state.igUserID,
