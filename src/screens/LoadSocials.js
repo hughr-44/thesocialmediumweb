@@ -841,17 +841,17 @@ class LoadSocials extends React.Component{
                    .then(()=>{
                     console.log('IG ROWS')
                     console.log(newRows)
-                    //this.setState({followsIgPosts: newRows})
+                    this.setState({followsIgPosts: newRows})
 
-                    var tempVidList = this.state.followsIgPosts
-                    var combinedList = tempVidList.concat(newRows)
+                    //var tempVidList = this.state.followsIgPosts
+                    //var combinedList = tempVidList.concat(newRows)
 
-                    this.setState({followsIgPosts: combinedList})
+                    //this.setState({followsIgPosts: combinedList})
                    })
-                   .then(async ()=>{
+                   .then(()=>{
                     //this.setTwitterName()
                     const sortedIg = this.sortIg()
-                    const igRows = await this.createIgRows(sortedIg)
+                    //const igRows = await this.createIgRows(sortedIg)
 
                     /*
                     if(i + 1 == follows.length){
@@ -1055,16 +1055,16 @@ class LoadSocials extends React.Component{
                     }
     
                     console.log(newRows)
-                    //this.setState({followsTweets: newRows})
+                    this.setState({followsTweets: newRows})
 
-                    var tempVidList = this.state.followsTweets
-                    var combinedList = tempVidList.concat(newRows)
+                    //var tempVidList = this.state.followsTweets
+                    //var combinedList = tempVidList.concat(newRows)
 
-                    this.setState({followsTweets: combinedList})
+                    //this.setState({followsTweets: combinedList})
 
 
 
-                    const sortedTweets = this.sortTweets()
+                    //const sortedTweets = this.sortTweets()
     
                 })
                 }
@@ -1074,11 +1074,12 @@ class LoadSocials extends React.Component{
 
             })
 
-            /*
+            
             if(i + 1 == follows.length){
+                console.log("SORTING TWEETS")
                 const sortedTweets = this.sortTweets()
             }
-            */
+            
         }
         //const sortedTweets = this.sortTweets()
         this.leaveLoading()
