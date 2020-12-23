@@ -703,7 +703,7 @@ class FollowOverlay extends React.Component {
     checkFollowsInApp(){
 
         console.log("getting follows")
-        const collPath = '/mainCollection/'+ this.state.loggedUID
+        const collPath = '/mainCollection/'+ this.state.uid
         var follows = []
         firebase.database().ref(collPath).once('value').then((snapshot) => {
             follows = snapshot.child('inAppFollows').val()
@@ -712,7 +712,7 @@ class FollowOverlay extends React.Component {
             console.log(follows.length)
             //this.leaveLoading()
             for(var i=0; i<follows.length; i++){
-                if(follows[i] == this.state.uid){
+                if(follows[i] == this.state.userCheck){
                 console.log("already followed")
                 this.setState({isFollowed: true})
                 this.setState({followText: "Unfollow"})

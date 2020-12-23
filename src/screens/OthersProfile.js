@@ -73,7 +73,10 @@ class OthersProfile extends React.Component{
 
         this.state = {
             email: "",
-            uid: props.location.state.usersUid,
+
+            userCheck: props.location.state.usersUid,
+            uid: this.props.location.state.pastState.myUID,
+
             password: "",
             errorMessage: null,
 
@@ -523,7 +526,7 @@ class OthersProfile extends React.Component{
                                     aria-describedby="simple-modal-description"
                                 >
                                     
-                                    <FollowOverlay platform="exists" userName={this.state.displayName}  myUID={this.state.uid} userCheck={this.state.displayName} loggedUID={this.props.location.state.pastState.myUID}/>
+                                    <FollowOverlay platform="exists" userName={this.state.displayName}  myUID={this.state.uid} userCheck={this.state.userCheck} />
                                     
                                 </Modal>
                                            
