@@ -41,6 +41,7 @@ class LoadSocials extends React.Component{
 
             youtubeToken: "",
             youtubeID: "",
+            youtubeName: "",
             myYTvids: [],
             nextPageToken: "",
             ytSubsList: [],
@@ -383,8 +384,10 @@ class LoadSocials extends React.Component{
             const profilePic = responseJson.items[0].snippet.thumbnails.medium.url
 
             const chanID = responseJson.items[0].id
+            const chanName = responseJson.items[0].snippet.channelTitle
 
             this.setState({youtubeID: chanID})
+            this.setState({youtubeName: chanName})
 
             const channelDescription = responseJson.items[0].snippet.description
 
@@ -675,7 +678,13 @@ class LoadSocials extends React.Component{
             this.setState({igToken: newYt.igAuthToken})
             this.setState({igUserID: newYt.igUserID})
 
-            this.getIgPost(this.state.igUserID, this.state.igToken)
+            if(newYt.igAuthToken == "NA"){
+                console.log("no twitch account")
+            }
+            else{
+                this.getIgPost(this.state.igUserID, this.state.igToken)
+            }
+
         })
     }
 
@@ -779,6 +788,12 @@ class LoadSocials extends React.Component{
                 })
                 */
 
+                if(igAuth == "NA"){
+                    console.log("no ig connected")
+                }
+                else{
+
+
                var igMediaURL = 'https://graph.instagram.com/' + igID + '/media?fields=permalink,timestamp,username,profile_picture_url,media_url&access_token=' + igAuth
                console.log(igMediaURL)
        
@@ -821,14 +836,31 @@ class LoadSocials extends React.Component{
                    .then(()=>{
                     console.log('IG ROWS')
                     console.log(newRows)
-                    this.setState({followsIgPosts: newRows})
+                    //this.setState({followsIgPosts: newRows})
+
+                    var tempVidList = this.state.followsIgPosts
+                    var combinedList = tempVidList.concat(newRows)
+
+                    this.setState({followsIgPosts: combinedList})
                    })
                    .then(()=>{
                     //this.setTwitterName()
-                    const sortedIg = this.sortIg()
+                    //const sortedIg = this.sortIg()
                     //const igRows = await this.createIgRows(sortedIg)
+
+                    if(i + 1 == follows.length){
+                        console.log("done ig follows")
+            
+                        const sortedIg = this.sortIg()
+                    }
+                    else{
+                        console.log("continuing follows ig posts")
+                    }
+
                    })
                    .catch(error=>console.log(error)) //to catch the errors if any
+
+                }
 
             })
         }
@@ -1014,11 +1046,16 @@ class LoadSocials extends React.Component{
                     }
     
                     console.log(newRows)
-                    this.setState({followsTweets: newRows})
+                    //this.setState({followsTweets: newRows})
+
+                    var tempVidList = this.state.followsTweets
+                    var combinedList = tempVidList.concat(newRows)
+
+                    this.setState({followsTweets: combinedList})
 
 
 
-                    const sortedTweets = this.sortTweets()
+                    //const sortedTweets = this.sortTweets()
     
                 })
                 }
@@ -1026,36 +1063,13 @@ class LoadSocials extends React.Component{
                     console.log("was null")
                 }
 
-                /*
-                const responseJson = await fetch("https://api.twitter.com/2/tweets/search?tweet.fields=created_at,author_id,text,entities&query=from%3A" + twitterName, {
-                    headers: {
-                    Authorization: "Bearer " + twitterAuth
-                    }
-                })
-                .then(response => response.json())
-                .then((responseJson)=>{
-                    for(var i=0; i<responseJson.data.length; i++){
-                        console.log('getting tweet info')
-                        console.log(responseJson.data[i])
-
-                        console.log('EXTENDED ENTITIES')
-                        console.log(responseJson.data[i].entities)
-
-                        const twitRow = [twitterName, responseJson.data[i].id, responseJson.data[i].created_at]
-                        newRows.push(twitRow)
-                    }
-                })
-                .then(()=>{
-                    console.log('TWITTER ROWS')
-                    console.log(newRows)
-                    this.setState({followsTweets: newRows})
-                })
-                .then(()=>{
-                    //this.leaveLoading()
-                })
-                */
             })
+
+            if(i + 1 == follows.length){
+                const sortedTweets = this.sortTweets()
+            }
         }
+        //const sortedTweets = this.sortTweets()
         this.leaveLoading()
     }
 
@@ -1079,7 +1093,7 @@ class LoadSocials extends React.Component{
         const collPath3 = '/mainCollection/' + this.state.uid +'/ytInfo'
         firebase.database().ref(collPath3).update({
             youtubeID: this.state.youtubeID,
-            //userName: this.state.userInfo.user.name
+            userName: this.state.youtubeName
         })
 
         const collPath4 = '/youtubeConnections/' + this.state.youtubeID

@@ -62,10 +62,20 @@ class AuthTwitch extends React.Component{
         for(var i=0; i<returnUrl.length; i++){
             var currSubstring = returnUrl.substr(i, 13)
             if('access_token=' == currSubstring){
-                console.log("access_token= found")
-                authToken = returnUrl.substr(i+13, 30)
-                console.log(authToken)
-                i = returnUrl.length
+
+                if(returnUrl.substr(i+13, 8) == "NoTwitch"){
+                    console.log("twitch was skipped")
+                    authToken = "NA"
+                    console.log(authToken)
+                    i = returnUrl.length
+                }
+                else{
+                    console.log("access_token= found")
+                    authToken = returnUrl.substr(i+13, 30)
+                    console.log(authToken)
+                    i = returnUrl.length
+                }
+                
             }
         }
 

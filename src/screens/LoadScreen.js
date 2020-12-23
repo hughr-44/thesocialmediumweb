@@ -90,6 +90,11 @@ class LoadScreen extends React.Component{
         window.close();
     }
 
+    skipTwitch(){
+        console.log("skipping twitch")
+        window.open("https://thesocialmediumappjs.herokuapp.com/#/AuthTwitch?access_token=NoTwitch" ,"_self");
+    }
+
     render(){
         const igHtml = '<iframe width="320" height="440" src="http://instagram.com/p/CIMN_BVhsZ3/embed" frameborder="0"></iframe>'
         return(
@@ -101,6 +106,10 @@ class LoadScreen extends React.Component{
                     </Row>
                     <Row style={{display: 'flex', justifyContent: 'center'}}>
                         <Button onClick={this.authTwitch} style={button}><h4 style={textStyle}>Auth</h4></Button>
+                    </Row>
+
+                    <Row style={{display: 'flex', justifyContent: 'center'}}>
+                        <Button onClick={this.skipTwitch} style={button}><h4 style={textStyle}>Skip Twitch</h4></Button>
                     </Row>
 
                 </Container>

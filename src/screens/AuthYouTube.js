@@ -121,6 +121,11 @@ class AuthYouTube extends React.Component{
         window.close();
     }
 
+    skipInstagram(){
+        console.log("skipping instagram")
+        window.open("https://thesocialmediumappjs.herokuapp.com/#/AuthInstagram?code=NoIg" ,"_self");
+    }
+
     render(){
         return(
             <div style={rootStyle} className="authyoutube-screen" id="AuthYouTube">
@@ -131,6 +136,9 @@ class AuthYouTube extends React.Component{
                     </Row>
                     <Row style={{display: 'flex', justifyContent: 'center'}}>
                         <Button onClick={this.authInstagram} style={button}><h4 style={textStyle}>Auth Instagram</h4></Button>
+                    </Row>
+                    <Row style={{display: 'flex', justifyContent: 'center'}}>
+                        <Button onClick={this.skipInstagram} style={button}><h4 style={textStyle}>Skip Instagram</h4></Button>
                     </Row>
                 </Container>
 

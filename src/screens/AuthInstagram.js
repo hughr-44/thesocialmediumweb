@@ -65,13 +65,36 @@ class AuthInstagram extends React.Component{
         var authToken = ''
         for(var i=0; i<returnUrl.length; i++){
             var currSubstring = returnUrl.substr(i, 5)
+
             if('code=' == currSubstring){
-                console.log("code= found")
-                authToken = returnUrl.substr(i+5, 238)
-                console.log(authToken)
-                i = returnUrl.length
+
+                if(returnUrl.substr(i+5, 4) == "NoIg"){
+                    console.log("ig was skipped")
+                    authToken = "NA"
+                    console.log(authToken)
+                    i = returnUrl.length
+                }
+                else{
+                    console.log("code= found")
+                    authToken = returnUrl.substr(i+5, 238)
+                    console.log(authToken)
+                    i = returnUrl.length
+                }
+
             }
+
         }
+
+        if(authToken == "NA"){
+            
+            const collPath = '/mainCollection/' + this.state.uid +'/igInfo'
+            firebase.database().ref(collPath).update({
+                igAuthToken: authToken,
+                igUserID: "NoID"
+            })
+
+        }
+        else{
 
         var igToken = ''
         var igID = ''
@@ -91,6 +114,8 @@ class AuthInstagram extends React.Component{
 
         })
         .catch(error=>console.log(error))
+
+        }
     }
 
     /*
