@@ -384,14 +384,14 @@ class LoadSocials extends React.Component{
             const profilePic = responseJson.items[0].snippet.thumbnails.medium.url
 
             const chanID = responseJson.items[0].id
-            const chanName = responseJson.items[0].snippet.channelTitle
+            const chanName = responseJson.items[0].snippet.title
 
             this.setState({youtubeID: chanID})
             this.setState({youtubeName: chanName})
 
             console.log("YOUTUBE NAME")
             console.log(chanName)
-            console.log(responseJson.items[0].snippet.channelTitle)
+            //console.log(responseJson.items[0].snippet.channelTitle)
             console.log(responseJson.items[0].snippet)
 
             const channelDescription = responseJson.items[0].snippet.description
