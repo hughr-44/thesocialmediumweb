@@ -685,6 +685,7 @@ class LoadSocials extends React.Component{
 
             if(newYt.igAuthToken == "NA"){
                 console.log("no ig account")
+                this.setState({myIgName: "NoIG"})
                 this.getFollowsIgPosts()
             }
             else{
