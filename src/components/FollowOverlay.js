@@ -94,7 +94,7 @@ class FollowOverlay extends React.Component {
     }
 
     startFollowOnApp(){
-        const collPath2 = '/usersConnections/' + this.state.uid
+        const collPath2 = '/usersConnections/' + this.state.userCheck
         console.log("getting connected user")
 
         var accTwitchName = ""
