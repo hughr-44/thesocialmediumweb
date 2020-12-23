@@ -32,6 +32,7 @@ class FollowOverlay extends React.Component {
 
         this.state = {
             uid: this.props.myUID,
+            loggedUID: this.props.loggedUID,
             userName: '',
             modalVisible: false,
             loadingModalVisible: false,
@@ -78,7 +79,6 @@ class FollowOverlay extends React.Component {
         console.log("UID CHECKS")
         console.log(this.props.myUID)
         console.log(this.props.loggedUID)
-        console.log(this.props.location.state.pastState.myUID)
 
         if(this.props.platform == 'exists'){
             this.startFollowOnApp()
@@ -703,7 +703,7 @@ class FollowOverlay extends React.Component {
     checkFollowsInApp(){
 
         console.log("getting follows")
-        const collPath = '/mainCollection/'+ this.props.loggedUID
+        const collPath = '/mainCollection/'+ this.state.loggedUID
         var follows = []
         firebase.database().ref(collPath).once('value').then((snapshot) => {
             follows = snapshot.child('inAppFollows').val()
@@ -727,7 +727,7 @@ class FollowOverlay extends React.Component {
     }
 
     checkFollows(){
-        const collPath = '/usersFollows/' + this.props.loggedUID
+        const collPath = '/usersFollows/' + this.state.loggedUID
         console.log("checking follows")
         console.log(collPath)
 
