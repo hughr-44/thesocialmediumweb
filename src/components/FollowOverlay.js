@@ -32,7 +32,7 @@ class FollowOverlay extends React.Component {
 
         this.state = {
             uid: this.props.myUID,
-            loggedUID: this.props.loggedUID,
+            //loggedUID: this.props.loggedUID,
             userName: '',
             modalVisible: false,
             loadingModalVisible: false,
@@ -78,7 +78,10 @@ class FollowOverlay extends React.Component {
 
         console.log("UID CHECKS")
         console.log(this.props.myUID)
-        console.log(this.props.loggedUID)
+        console.log(this.state.uid)
+        //console.log(this.props.loggedUID)
+        console.log(this.props.userCheck)
+        console.log(this.state.userCheck)
 
         if(this.props.platform == 'exists'){
             this.startFollowOnApp()

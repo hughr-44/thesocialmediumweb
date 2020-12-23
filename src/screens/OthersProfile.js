@@ -75,7 +75,7 @@ class OthersProfile extends React.Component{
             email: "",
 
             userCheck: props.location.state.usersUid,
-            uid: this.props.location.state.pastState.myUID,
+            uid: props.location.state.pastState.myUID,
 
             password: "",
             errorMessage: null,
