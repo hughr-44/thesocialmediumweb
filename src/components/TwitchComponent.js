@@ -147,7 +147,7 @@ class TwitchComponent extends React.Component {
                                 </Modal>
                             </Row>
                             <Row style={{display: 'flex', flex: 1, justifyContent: "flex-start",  alignSelf: "start"}}>
-                                <h2 style={{ color: '#e8e6e3' }}> className="display-1 font-weight-bolder">{this.state.trimmedTitle}</h2> 
+                                <h2 style={{ color: '#e8e6e3' }} className="display-1 font-weight-bolder">{this.state.trimmedTitle}</h2> 
                             </Row>
                         </Col>
                         <Col style={{display: 'flex', flex: 1, justifyContent: 'flex-end', marginRight: 10}}>

@@ -105,26 +105,26 @@ class SearchScreen extends React.Component{
             const newResult = [
                 <Container key={"results" + i} style={twitchComponent}>
                 <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', marginLeft: 20}}>
-                    <h3>{searchResults[i][0].child('displayName').val()}</h3>
+                    <h3 style={{ color: '#e8e6e3' }}>{searchResults[i][0].child('displayName').val()}</h3>
                 </Row>
                 <Row style={{display: 'flex', flex: 1, justifyContent: "flex-start", alignSelf: "start", marginLeft: 20}}>
                     <Button onClick={() => this.goToProfile(tempUid)} style={button}>Visit</Button>
                 </Row>
                 <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', marginLeft: 20}}>
                     <Avatar style={{width: 30, height: 30}} src={YTLogo} />
-                    <h4 style={{marginLeft: 5}}>{searchResults[i][0].child('ytInfo').child('userName').val()}</h4>
+                    <h4 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{searchResults[i][0].child('ytInfo').child('userName').val()}</h4>
                 </Row>
                 <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', marginLeft: 20}}>
                     <Avatar style={{width: 30, height: 30}} src={TwitchLogo} />
-                    <h4 style={{marginLeft: 5}}>{searchResults[i][0].child('twitchInfo').child('userName').val()}</h4>
+                    <h4 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{searchResults[i][0].child('twitchInfo').child('userName').val()}</h4>
                 </Row>
                 <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', marginLeft: 20}}>
                     <Avatar style={{width: 30, height: 30}} src={TwitterLogo}/>  
-                    <h4 style={{marginLeft: 5}}>{searchResults[i][0].child('twitterInfo').child('userName').val()}</h4>
+                    <h4 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{searchResults[i][0].child('twitterInfo').child('userName').val()}</h4>
                 </Row>
                 <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', marginLeft: 20}}>
                     <Avatar style={{width: 30, height: 30}} src={IgLogo}/>  
-                    <h4 style={{marginLeft: 5}}>{searchResults[i][0].child('igInfo').child('userName').val()}</h4>
+                    <h4 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{searchResults[i][0].child('igInfo').child('userName').val()}</h4>
                 </Row>
                 </Container>
             ]
@@ -200,7 +200,7 @@ class SearchScreen extends React.Component{
                                     this.props.location.state
                             }}
                         >
-                            <HomeIcon style={{marginLeft: 150, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <HomeIcon style={{marginLeft: 120, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                         <Nav.Link as={Link} 
                             to={{pathname: "/FeedScreen",
@@ -232,7 +232,7 @@ class SearchScreen extends React.Component{
                                     this.props.location.state
                             }}
                         >
-                            <InfoIcon style={{marginLeft: 40, marginRight: 150, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <InfoIcon style={{marginLeft: 40, marginRight: 120, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                     </Nav>
                 </Navbar>
@@ -277,7 +277,8 @@ const tweetComponent = {
 }
 
 const headerComponent = {
-    backgroundColor: "#ACACAC",
+    //backgroundColor: "#ACACAC",
+    backgroundColor: "#474d50",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
@@ -299,7 +300,8 @@ const headerComponent = {
 }
 
 const twitchComponent = {
-    backgroundColor: "#ACACAC",
+    //backgroundColor: "#ACACAC",
+    backgroundColor: "#474d50",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
@@ -318,7 +320,8 @@ const twitchComponent = {
 
 const rootStyle = {
     height: "100hv",
-    backgroundColor: "#313131",
+    //backgroundColor: "#313131",
+    backgroundColor: "#25282a",
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 30,

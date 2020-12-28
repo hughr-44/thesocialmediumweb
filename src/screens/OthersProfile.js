@@ -535,7 +535,7 @@ class OthersProfile extends React.Component{
                             </Row>
                             <Row style={{display: 'flex', flex: 1, justifyContent: "flex-start",  alignSelf: "start", marginLeft: 22}}>
                             <StarIcon onClick={this.clickedFav.bind(this)} style={{marginTop: 10, marginLeft: 10, marginRight: 10, color: this.state.favColor, maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
-                                <h2>{this.state.displayName}</h2> 
+                                <h2 style={{ color: '#e8e6e3' }}>{this.state.displayName}</h2> 
                             </Row>
                         </Col>
                         <Col style={{display: 'flex', flex: 1, justifyContent: 'flex-end', marginRight: 10}}>
@@ -545,28 +545,28 @@ class OthersProfile extends React.Component{
                     <Row style={{display: 'flex', justifyContent: 'center', marginTop: 10, height: 90}}>
                         <Col style={{display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'center', marginLeft: 50}}>
                             <Row  style={{display: 'flex', flex: 1, flexDirection: 'row', height: 30}}>
-                                <h3>Social</h3> 
+                                <h3 style={{ color: '#e8e6e3' }}>Social</h3> 
                             </Row>
                             <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center'}}>
                                 <Avatar onClick={this.setRowTwitch.bind(this)} style={{width: 30, height: 30}} src={TwitchLogo} />
-                                <h3 style={{marginLeft: 5}}>{this.state.twitchName}</h3> 
+                                <h3 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{this.state.twitchName}</h3> 
                             </Row>
                             <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', height: 20}}>
                                 <Avatar onClick={this.setRowYT.bind(this)} style={{width: 30, height: 30}} src={YTLogo} />
-                                <h3 style={{marginLeft: 5}}>{this.state.youtubeName}</h3> 
+                                <h3 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{this.state.youtubeName}</h3> 
                             </Row>
                         </Col>
                         <Col style={{display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'center', marginLeft: 50}}>
                             <Row  style={{display: 'flex', flex: 1, flexDirection: 'row', height: 30}}>
-                                <h3>Social</h3> 
+                                <h3 style={{ color: '#e8e6e3' }}>Social</h3> 
                             </Row>
                             <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center'}}>
                                 <Avatar onClick={this.updateIg.bind(this)} style={{width: 30, height: 30}} src={IgLogo} />
-                                <h3 style={{marginLeft: 5}}>{this.state.igName}</h3> 
+                                <h3 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{this.state.igName}</h3> 
                             </Row>
                             <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', height: 20}}>
                                 <Avatar onClick={this.updateTwitter.bind(this)} style={{width: 30, height: 30}} src={TwitterLogo} />
-                                <h3 style={{marginLeft: 5}}>{this.state.twitterName}</h3> 
+                                <h3 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{this.state.twitterName}</h3> 
                             </Row>
                         </Col>
                     </Row>
@@ -598,7 +598,7 @@ class OthersProfile extends React.Component{
                                     this.props.location.state.pastState
                             }}
                         >
-                            <HomeIcon style={{marginLeft: 150, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <HomeIcon style={{marginLeft: 120, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                         <Nav.Link as={Link} 
                             to={{pathname: "/FeedScreen",
@@ -630,7 +630,7 @@ class OthersProfile extends React.Component{
                                     this.props.location.state
                             }}
                         >
-                            <InfoIcon style={{marginLeft: 40, marginRight: 150, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <InfoIcon style={{marginLeft: 40, marginRight: 120, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                     </Nav>
                 </Navbar>
@@ -675,7 +675,8 @@ const tweetComponent = {
 }
 
 const headerComponent = {
-    backgroundColor: "#ACACAC",
+    //backgroundColor: "#ACACAC",
+    backgroundColor: "#474d50",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
@@ -716,7 +717,8 @@ const twitchComponent = {
 
 const rootStyle = {
     height: "100hv",
-    backgroundColor: "#313131",
+    //backgroundColor: "#313131",
+    backgroundColor: "#25282a",
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 30,

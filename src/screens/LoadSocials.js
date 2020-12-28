@@ -1195,7 +1195,7 @@ class LoadSocials extends React.Component{
         //this.setState({igRows: igRows})
 
         this.setState({leaveButtonText: "Enter"})
-        this.setState({leaveLoading: true})
+        this.setState({doneLoading: true})
     }
 
 
@@ -1589,7 +1589,7 @@ class LoadSocials extends React.Component{
                     </Row>
                     */}
                     <Row style={{display: 'flex', justifyContent: 'center'}}>
-                        <Button onClick={!this.state.doneLoading ? this.goToFeed.bind(this) : null} style={button}><h4 style={textStyle}>{this.state.leaveButtonText}</h4></Button>
+                        <Button onClick={this.state.doneLoading ? this.goToFeed.bind(this) : null} style={button}><h4 style={textStyle}>{this.state.leaveButtonText}</h4></Button>
                     </Row>
                 </Container>
 
@@ -1600,7 +1600,8 @@ class LoadSocials extends React.Component{
 
 const rootStyle = {
     height: "100vh",
-    backgroundColor: "#ACACAC"
+    backgroundColor: "#25282a"
+    //backgroundColor: "#ACACAC"
 }
 const mainContainer = {
     backgroundColor: "#ACACAC",

@@ -159,10 +159,10 @@ class YoutubeComponent extends React.Component {
                         </Modal>
                     </Row>
                     <Row style={{display: 'flex', flex: 1, justifyContent: "flex-start",  alignSelf: "start", height: 0}}>
-                        <h2 className="display-1 font-weight-bolder">{this.state.trimmedTitle}</h2>
+                        <h2 style={{ color: '#e8e6e3' }} className="display-1 font-weight-bolder">{this.state.trimmedTitle}</h2>
                     </Row>
                     <Row style={{display: 'flex', flex: 1, justifyContent: "flex-start",  alignSelf: "start", height: 0, marginTop: 0}}>
-                        <h4 className="display-1 font-weight-bolder">{this.props.date.substr(0,10)}</h4> 
+                        <h4 style={{ color: '#e8e6e3' }} className="display-1 font-weight-bolder">{this.props.date.substr(0,10)}</h4> 
                     </Row>
                 </Col>
                 <Col style={{display: 'flex', flex: 1, justifyContent: 'flex-end', marginRight: 10}}>

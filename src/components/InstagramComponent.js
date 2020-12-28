@@ -135,7 +135,7 @@ class InstagramComponent extends React.Component {
                             <div style={rootStyle} className="redirect-modal" id="RedirectModal">
                             <Container style={redirectStyle}>          
                                 <Row style={{display: 'flex', flex: 1, justifyContent: "center", alignSelf: "center", height: '100%'}}> 
-                                <h2 style={{justifyContent: "center", marginTop: 30}}>Must redirect to instagram to perform action...</h2>
+                                <h2 style={{ color: '#e8e6e3' }} style={{justifyContent: "center", marginTop: 30}}>Must redirect to instagram to perform action...</h2>
                                 <Button onClick={this.redirectIg.bind(this)} style={button2}>Redirect</Button>
                                 </Row> 
                             </Container>  

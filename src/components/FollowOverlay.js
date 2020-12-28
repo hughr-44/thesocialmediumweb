@@ -971,7 +971,7 @@ class FollowOverlay extends React.Component {
                             <div style={rootStyle} className="redirect-modal" id="RedirectModal">  
                             <Container style={redirectStyle}>          
                                 <Row style={{display: 'flex', flex: 1, justifyContent: "center", alignSelf: "center", height: '100%'}}> 
-                                <h2 style={{justifyContent: "center", marginTop: 30}}>Must redirect to instagram to perform action...</h2>
+                                <h2 style={{ color: '#e8e6e3' }} style={{justifyContent: "center", marginTop: 30}}>Must redirect to instagram to perform action...</h2>
                                 <Button onClick={this.redirectIg.bind(this)} style={button2}>Redirect</Button>
                                 </Row> 
                             </Container>   
@@ -989,7 +989,7 @@ class FollowOverlay extends React.Component {
                             <div style={rootStyle} className="redirect-modal" id="RedirectModal">  
                             <Container style={redirectStyle}>          
                                 <Row style={{display: 'flex', flex: 1, justifyContent: "center", alignSelf: "center", height: '100%'}}> 
-                                <h2 style={{justifyContent: "center", marginTop: 30}}>Must redirect to twitter to perform action...</h2>
+                                <h2 style={{ color: '#e8e6e3' }} style={{justifyContent: "center", marginTop: 30}}>Must redirect to twitter to perform action...</h2>
                                 <Button onClick={this.redirectTwitter.bind(this)} style={button2}>Redirect</Button>
                                 </Row> 
                             </Container>  
@@ -1011,7 +1011,7 @@ class FollowOverlay extends React.Component {
                         </Row>
 
                         <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                            <h2>{this.state.displayName}</h2> 
+                            <h2 style={{ color: '#e8e6e3' }}>{this.state.displayName}</h2> 
                         </Row>
                         <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                             <Button onClick={this.followUser.bind(this)} style={{ 
@@ -1038,7 +1038,7 @@ class FollowOverlay extends React.Component {
                         </Row>
                         <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                             <Avatar style={{width: 30, height: 30}} src={TwitchLogo} />
-                            <h3 style={{marginLeft: 5}}>{this.state.twitchName}</h3> 
+                            <h3 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{this.state.twitchName}</h3> 
                             <Button onClick={this.followTwitch.bind(this)} style={{ 
                                 shadowOpacity: 0.3,
                                 shadowRadius: 3,
@@ -1063,7 +1063,7 @@ class FollowOverlay extends React.Component {
                         </Row>
                         <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                             <Avatar style={{width: 30, height: 30}} src={YTLogo} />
-                            <h3 style={{marginLeft: 5}}>{this.state.youtubeName}</h3>
+                            <h3 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{this.state.youtubeName}</h3>
                             <Button onClick={this.followYoutube.bind(this)} style={{ 
                                 shadowOpacity: 0.3,
                                 shadowRadius: 3,
@@ -1088,12 +1088,12 @@ class FollowOverlay extends React.Component {
                         </Row>
                         <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                             <Avatar style={{width: 30, height: 30}} src={IgLogo} />
-                            <h3 style={{marginLeft: 5}}>{this.state.igName}</h3>
+                            <h3 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{this.state.igName}</h3>
                             <Button onClick={this.redirectIgOpen.bind(this)} style={button2}>Follow</Button>
                         </Row>
                         <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                             <Avatar style={{width: 30, height: 30}} src={TwitterLogo} />
-                            <h3 style={{marginLeft: 5}}>{this.state.twitterName}</h3>
+                            <h3 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{this.state.twitterName}</h3>
                             <Button onClick={this.redirectTwitterOpen.bind(this)} style={button2}>Follow</Button>
                         </Row>
                     </Container>

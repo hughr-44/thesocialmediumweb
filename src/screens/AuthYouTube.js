@@ -149,7 +149,8 @@ class AuthYouTube extends React.Component{
 
 const rootStyle = {
     height: "100vh",
-    backgroundColor: "#ACACAC"
+    backgroundColor: "#25282a"
+    //backgroundColor: "#ACACAC"
 }
 const mainContainer = {
     backgroundColor: "#ACACAC",

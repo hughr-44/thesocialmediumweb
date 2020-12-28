@@ -98,7 +98,7 @@ class TwitterComponent extends React.Component {
                             <div style={rootStyle} className="redirect-modal" id="RedirectModal">           
                             <Container style={redirectStyle}>          
                                 <Row style={{display: 'flex', flex: 1, justifyContent: "center", alignSelf: "center", height: '100%'}}> 
-                                <h2 style={{justifyContent: "center", marginTop: 30}}>Must redirect to twitter to perform action...</h2>
+                                <h2 style={{ color: '#e8e6e3' }} style={{justifyContent: "center", marginTop: 30}}>Must redirect to twitter to perform action...</h2>
                                 <Button onClick={this.redirectTwitter.bind(this)} style={button2}>Redirect</Button>
                                 </Row> 
                             </Container>
@@ -125,7 +125,7 @@ class TwitterComponent extends React.Component {
                             </Modal>
                         </Row>
                         <Row style={{display: 'flex', flex: 1, justifyContent: "flex-start",  alignSelf: "start"}}>
-                            <h2 className="display-1 font-weight-bolder">{this.props.twitterName}</h2> 
+                            <h2 style={{ color: '#e8e6e3' }} className="display-1 font-weight-bolder">{this.props.twitterName}</h2> 
                         </Row>
                     </Col>
                     <Col style={{display: 'flex', flex: 1, justifyContent: 'flex-end', marginRight: 10}}>

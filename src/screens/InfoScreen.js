@@ -78,7 +78,7 @@ class InfoScreen extends React.Component{
                                     this.props.location.state
                             }}
                         >
-                            <HomeIcon style={{marginLeft: 150, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <HomeIcon style={{marginLeft: 120, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                         <Nav.Link as={Link} 
                             to={{pathname: "/FeedScreen",
@@ -110,7 +110,7 @@ class InfoScreen extends React.Component{
                                     this.props.location.state
                             }}
                         >
-                            <InfoIcon style={{marginLeft: 40, marginRight: 150, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <InfoIcon style={{marginLeft: 40, marginRight: 120, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                     </Nav>
                 </Navbar>
@@ -123,7 +123,8 @@ class InfoScreen extends React.Component{
 }
 
 const headerComponent = {
-    backgroundColor: "#ACACAC",
+    //backgroundColor: "#ACACAC",
+    backgroundColor: "#474d50",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
@@ -152,7 +153,8 @@ const footer = {
 }
 
 const tweetComponent = {
-    backgroundColor: "#ACACAC",
+    //backgroundColor: "#ACACAC",
+    backgroundColor: "#474d50",
     justifyContent: "center",
     alignItems: "stretch",
     borderRadius: 10,
@@ -222,7 +224,8 @@ const container = {
 
 const rootStyle = {
     height: "100%",
-    backgroundColor: "#313131",
+    //backgroundColor: "#313131",
+    backgroundColor: "#25282a",
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 30,
