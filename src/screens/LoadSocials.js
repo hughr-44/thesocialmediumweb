@@ -1050,24 +1050,30 @@ class LoadSocials extends React.Component{
                 console.log(responseJson)
 
                 //loop through here
+
+                if(responseJson.data.data){
                     
-                for(var i=0; i<responseJson.data.data.length; i++){
-                    //console.log(responseJson.data.data[i])
-                    //const twitRow = <TwitterComponent twitterName="wheezyoutcast" postNum={responseJson.data[i].id}/>
-                    const twitRow = [follows[i].id, responseJson.data.data[i].id, responseJson.data.data[i].created_at]
-                    newRows.push(twitRow)
+                    for(var i=0; i<responseJson.data.data.length; i++){
+                        //console.log(responseJson.data.data[i])
+                        //const twitRow = <TwitterComponent twitterName="wheezyoutcast" postNum={responseJson.data[i].id}/>
+                        const twitRow = [follows[i].id, responseJson.data.data[i].id, responseJson.data.data[i].created_at]
+                        newRows.push(twitRow)
+                    }
+        
+                    //console.log(newRows)
+                    //this.setState({followsTweets: newRows})
+
+                    var tempVidList = this.state.followsTweets
+                    var combinedList = tempVidList.concat(newRows)
+
+                    this.setState({followsTweets: combinedList})
+
+
+                    //const sortedTweets = this.sortTweets()
                 }
-    
-                //console.log(newRows)
-                this.setState({followsTweets: newRows})
-
-                //var tempVidList = this.state.followsTweets
-                //var combinedList = tempVidList.concat(newRows)
-
-                //this.setState({followsTweets: combinedList})
-
-
-                //const sortedTweets = this.sortTweets()
+                else{
+                    console.log("DATA WAS UNDEFINED")
+                }
             })
 
         }
