@@ -192,7 +192,8 @@ const rootStyle = {
     //backgroundColor: "#ACACAC"
 }
 const mainContainer = {
-    backgroundColor: "#ACACAC",
+    //backgroundColor: "#ACACAC",
+    backgroundColor: "#25282a",
     height: "100%",
     fluid: true
 }

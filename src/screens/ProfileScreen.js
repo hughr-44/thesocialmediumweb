@@ -190,11 +190,11 @@ class ProfileScreen extends React.Component{
                             </Row>
                             <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center'}}>
                                 <Avatar onClick={this.fillTwitch.bind(this)} style={{width: 30, height: 30}} src={TwitchLogo} />
-                                <h3 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{this.state.twitchName}</h3> 
+                                <h3 style={{marginLeft: 5, color: '#e8e6e3'}}>{this.state.twitchName}</h3> 
                             </Row>
                             <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', height: 20}}>
                                 <Avatar onClick={this.fillYT.bind(this)} style={{width: 30, height: 30}} src={YTLogo} />
-                                <h3 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{this.state.youtubeName}</h3> 
+                                <h3 style={{marginLeft: 5, color: '#e8e6e3'}}>{this.state.youtubeName}</h3> 
                             </Row>
                         </Col>
                         <Col style={{display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'center', marginLeft: 50}}>
@@ -203,11 +203,11 @@ class ProfileScreen extends React.Component{
                             </Row>
                             <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center'}}>
                                 <Avatar onClick={this.fillIG.bind(this)} style={{width: 30, height: 30}} src={IgLogo} />
-                                <h3 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{this.state.igName}</h3> 
+                                <h3 style={{marginLeft: 5, color: '#e8e6e3'}}>{this.state.igName}</h3> 
                             </Row>
                             <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', height: 20}}>
                                 <Avatar onClick={this.fillTwitter.bind(this)} style={{width: 30, height: 30}} src={TwitterLogo} />
-                                <h3 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{this.state.twitterName}</h3> 
+                                <h3 style={{marginLeft: 5, color: '#e8e6e3'}}>{this.state.twitterName}</h3> 
                             </Row>
                         </Col>
                     </Row>

@@ -112,19 +112,19 @@ class SearchScreen extends React.Component{
                 </Row>
                 <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', marginLeft: 20}}>
                     <Avatar style={{width: 30, height: 30}} src={YTLogo} />
-                    <h4 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{searchResults[i][0].child('ytInfo').child('userName').val()}</h4>
+                    <h4 style={{marginLeft: 5, color: '#e8e6e3'}}>{searchResults[i][0].child('ytInfo').child('userName').val()}</h4>
                 </Row>
                 <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', marginLeft: 20}}>
                     <Avatar style={{width: 30, height: 30}} src={TwitchLogo} />
-                    <h4 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{searchResults[i][0].child('twitchInfo').child('userName').val()}</h4>
+                    <h4 style={{marginLeft: 5, color: '#e8e6e3'}}>{searchResults[i][0].child('twitchInfo').child('userName').val()}</h4>
                 </Row>
                 <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', marginLeft: 20}}>
                     <Avatar style={{width: 30, height: 30}} src={TwitterLogo}/>  
-                    <h4 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{searchResults[i][0].child('twitterInfo').child('userName').val()}</h4>
+                    <h4 style={{marginLeft: 5, color: '#e8e6e3'}}>{searchResults[i][0].child('twitterInfo').child('userName').val()}</h4>
                 </Row>
                 <Row style={{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'center', marginLeft: 20}}>
                     <Avatar style={{width: 30, height: 30}} src={IgLogo}/>  
-                    <h4 style={{ color: '#e8e6e3' }} style={{marginLeft: 5}}>{searchResults[i][0].child('igInfo').child('userName').val()}</h4>
+                    <h4 style={{marginLeft: 5, color: '#e8e6e3'}}>{searchResults[i][0].child('igInfo').child('userName').val()}</h4>
                 </Row>
                 </Container>
             ]
