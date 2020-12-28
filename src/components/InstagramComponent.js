@@ -238,7 +238,7 @@ const rootStyle = {
 }
 
 const igComponent = {
-    backgroundColor: "#ACACAC",
+    backgroundColor: "#474d50",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,

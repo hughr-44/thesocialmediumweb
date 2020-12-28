@@ -604,6 +604,7 @@ const headerComponent = {
 }
 
 const footer = {
+    backgroundColor: "#474d50",
     clear: 'both',
     position: 'relative',
     height: '200px',
