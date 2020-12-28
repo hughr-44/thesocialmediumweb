@@ -132,7 +132,7 @@ class AuthYouTube extends React.Component{
 
                 <Container style={mainContainer}>
                     <Row style={{display: 'flex', justifyContent: 'center'}}>
-                        auth
+                        <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Authorize Instagram</h2>
                     </Row>
                     <Row style={{display: 'flex', justifyContent: 'center'}}>
                         <Button onClick={this.authInstagram} style={button}><h4 style={textStyle}>Auth Instagram</h4></Button>

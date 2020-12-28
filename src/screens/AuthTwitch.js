@@ -116,7 +116,7 @@ class AuthTwitch extends React.Component{
 
                 <Container style={mainContainer}>
                     <Row style={{display: 'flex', justifyContent: 'center'}}>
-                        auth
+                        <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Authorize YouTube</h2>
                     </Row>
                     <Row style={{display: 'flex', justifyContent: 'center'}}>
                         <Button onClick={this.authYT} style={button}><h4 style={textStyle}>Auth YT</h4></Button>

@@ -79,7 +79,7 @@ const textStyle = {
     color: "white"
 }
 const title = {
-    color: "black",
+    color: "white",
     marginTop: "20%"
 }
 

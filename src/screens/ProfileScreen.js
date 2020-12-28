@@ -239,7 +239,7 @@ class ProfileScreen extends React.Component{
                                     this.props.location.state
                             }}
                         >
-                            <HomeIcon style={{marginLeft: 120, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <HomeIcon style={{marginLeft: 110, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                         <Nav.Link as={Link} 
                             to={{pathname: "/FeedScreen",
@@ -271,7 +271,7 @@ class ProfileScreen extends React.Component{
                                     this.props.location.state
                             }}
                         >
-                            <InfoIcon style={{marginLeft: 40, marginRight: 120, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <InfoIcon style={{marginLeft: 40, marginRight: 110, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                     </Nav>
                 </Navbar>

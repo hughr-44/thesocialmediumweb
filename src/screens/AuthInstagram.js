@@ -166,7 +166,7 @@ class AuthInstagram extends React.Component{
 
                 <Container style={mainContainer}>
                     <Row style={{display: 'flex', justifyContent: 'center'}}>
-                        auth
+                        <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Enter Twitter Name</h2>
                     </Row>
                 
                     <Row style={{display: 'flex', justifyContent: 'center'}}>

@@ -418,6 +418,8 @@ class OthersProfile extends React.Component{
                     this.setState({myTwitchRow: myTwitchRow})
                     this.setState({twitchPFP: pfpLink})
                 }
+
+                this.switchPFP()
                 
             })
             .catch(error=>console.log(error))
@@ -476,7 +478,7 @@ class OthersProfile extends React.Component{
         else if(this.state.pfpCount == 1){
             this.setState({currPFPplatform: YTLogo})
             this.setState({currPFP: this.state.ytPFP})
-            this.setState({pfpCount: 2})
+            this.setState({pfpCount: 0})
         }
         else{
             this.setState({currPFPplatform: DefaultPFP})
@@ -598,7 +600,7 @@ class OthersProfile extends React.Component{
                                     this.props.location.state.pastState
                             }}
                         >
-                            <HomeIcon style={{marginLeft: 120, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <HomeIcon style={{marginLeft: 110, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                         <Nav.Link as={Link} 
                             to={{pathname: "/FeedScreen",
@@ -630,7 +632,7 @@ class OthersProfile extends React.Component{
                                     this.props.location.state
                             }}
                         >
-                            <InfoIcon style={{marginLeft: 40, marginRight: 120, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <InfoIcon style={{marginLeft: 40, marginRight: 110, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                     </Nav>
                 </Navbar>
