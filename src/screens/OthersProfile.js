@@ -98,12 +98,15 @@ class OthersProfile extends React.Component{
 
             rows: startRows,
 
-            favColor: "black",
+            favColor: "white",
             notFavColor: "gold",
+            isFav: false,
 
             isFollowed: false,
             followText: "Follow",
             followColor: "#401058",
+
+            favList: [],
 
             inAppFollows: [],
 
@@ -135,6 +138,7 @@ class OthersProfile extends React.Component{
         //console.log(this.props.route.params.testProps)
         this.updateProfileInfo()
         this.checkFollow()
+        this.checkFav()
     }
 
     checkFollow(){
@@ -155,6 +159,31 @@ class OthersProfile extends React.Component{
                 this.setState({followText: "Unfollow"})
                 this.setState({followColor: "#FD0101"})
                 i = follows.length
+                }
+                else{
+                console.log("not followed")
+                }
+            }
+        })
+    }
+
+    checkFav(){
+
+        console.log("getting favs")
+        const collPath = '/mainCollection/'+ this.props.location.state.pastState.myUID
+        var favs = []
+        firebase.database().ref(collPath).once('value').then((snapshot) => {
+            favs = snapshot.child('favsList').val()
+            this.setState({favList: favs})
+            console.log(favs)
+            console.log(favs.length)
+            //this.leaveLoading()
+            for(var i=0; i<favs.length; i++){
+                if(favs[i] == this.props.location.state.usersUid){
+                console.log("already followed")
+                this.setState({favColor: "gold"})
+                this.setState({isFav: true})
+                i = favs.length
                 }
                 else{
                 console.log("not followed")
@@ -442,9 +471,22 @@ class OthersProfile extends React.Component{
 
     clickedFav(){
         console.log("fav clicked")
-        const tempColor = this.state.notFavColor
-        this.setState({notFavColor: this.state.favColor})
-        this.setState({favColor: this.state.notFavColor})
+        //const tempColor = this.state.notFavColor
+        //this.setState({notFavColor: this.state.favColor})
+        if(!this.state.isFav){
+
+            var favsList = this.state.favList
+            favsList.push(this.props.location.state.usersUid)
+
+            const collPath = '/mainCollection/' + this.props.location.state.pastState.myUID
+            firebase.database().ref(collPath).update({
+                favsList: favsList
+            })
+
+            this.setState({favColor: "gold"})
+            this.setState({isFav: true})
+        }
+
     }
 
     clickFollow(){

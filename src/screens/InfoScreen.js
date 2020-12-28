@@ -52,19 +52,27 @@ class InfoScreen extends React.Component{
                 <Container style={{zIndex: 0}}>
                     <Container  style={tweetComponent}>
                         <Row style={{display: 'flex', justifyContent: 'center'}}>
-                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Information</h2> 
+                            <h1 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Information</h2> 
                         </Row>
                         <Row style={{display: 'flex', justifyContent: 'center'}}>
                             <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Thank you for using The Social Medium.</h2>
+                        </Row>
+                        <Row style={{display: 'flex', justifyContent: 'center'}}>
                             <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Please report any issues you may have came across or any suggestions you have.</h2>
+                        </Row>
+                        <Row style={{display: 'flex', justifyContent: 'center'}}>
                             <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Twitter (preferred): @wheezyoutcast</h2>   
+                        </Row>
+                        <Row style={{display: 'flex', justifyContent: 'center'}}>
                             <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Instagram: @ex.wheezy</h2> 
                         </Row>
                         <Row style={{display: 'flex', justifyContent: 'center'}}>
-                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Coming Soon</h2> 
+                            <h1 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Coming Soon</h2> 
                         </Row>
                         <Row style={{display: 'flex', justifyContent: 'center'}}>
                             <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Currently instagram and twitter are not fully functioning.</h2>
+                        </Row>
+                        <Row style={{display: 'flex', justifyContent: 'center'}}>
                             <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">We are hoping to bring this functionality soon.</h2>
                         </Row>
                     </Container>
