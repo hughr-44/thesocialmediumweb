@@ -140,16 +140,16 @@ class TwitterComponent extends React.Component {
                 </Row>
                 <Row style={{display: 'flex', justifyContent: 'flex-start'}}>
                     <IconButton onClick={this.redirectTwitterOpen.bind(this)}aria-label="like" color="primary">
-                        <FavoriteIcon style={{color: 'black', maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px'}} />
+                        <FavoriteIcon style={{color: 'white', maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px'}} />
                     </IconButton>
                     <IconButton onClick={this.redirectTwitterOpen.bind(this)} aria-label="like" color="primary">
-                        <RepeatIcon style={{color: 'black', maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px'}} />
+                        <RepeatIcon style={{color: 'white', maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px'}} />
                     </IconButton>
                     <Form.Group controlId="formBasicPassword">
                         <Form.Control style={{marginTop: 10, maxWidth: '535px', maxHeight: '40px', minWidth: '535px', minHeight: '40px'}} type="comment" placeholder="Comment..." onChange={e => this.setState({ twitterComment: e.target.value })} />
                     </Form.Group>
                     <IconButton onClick={this.redirectTwitterOpen.bind(this)} aria-label="like" color="primary">
-                        <SendIcon style={{color: 'black', maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px'}} />
+                        <SendIcon style={{color: 'white', maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px'}} />
                     </IconButton>
                 </Row>
             </Container>

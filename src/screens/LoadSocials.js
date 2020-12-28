@@ -1195,7 +1195,7 @@ class LoadSocials extends React.Component{
         //this.setState({igRows: igRows})
 
         this.setState({leaveButtonText: "Enter"})
-        this.setState({doneLoading: true})
+        //this.setState({doneLoading: true})
     }
 
 
@@ -1521,6 +1521,7 @@ class LoadSocials extends React.Component{
             num = num + 1
         }
         this.setState({combinedPosts: combinedPosts})
+        this.setState({doneLoading: true})
     }
 
     goToFeed(){

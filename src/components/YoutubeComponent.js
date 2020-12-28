@@ -41,7 +41,7 @@ class YoutubeComponent extends React.Component {
             commentValue: '',
             hasStopped: false,
             liked: false,
-            likeColor: "black",
+            likeColor: "white",
 
             followClicked: false,
             userCheck: ''
@@ -180,7 +180,7 @@ class YoutubeComponent extends React.Component {
                     <Form.Control style={{marginTop: 10, maxWidth: '535px', maxHeight: '40px', minWidth: '535px', minHeight: '40px'}} type="comment" placeholder="Comment..." onChange={e => this.setState({ commentValue: e.target.value })} />
                 </Form.Group>
                 <IconButton onClick={this.sendComment.bind(this)} aria-label="like" color="primary">
-                    <SendIcon style={{color: 'black', maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px'}} />
+                    <SendIcon style={{color: 'white', maxWidth: '40px', maxHeight: '40px', minWidth: '40px', minHeight: '40px'}} />
                 </IconButton>
             </Row>
         </Container>
