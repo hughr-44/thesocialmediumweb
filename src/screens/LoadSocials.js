@@ -1069,7 +1069,10 @@ class LoadSocials extends React.Component{
                     this.setState({followsTweets: combinedList})
 
 
-                    const sortedTweets = this.sortTweets()
+                    if(i + 1 == follows.length){
+                        const sortedTweets = this.sortTweets()
+                    }
+                    
                 }
                 else{
                     console.log("DATA WAS UNDEFINED")
