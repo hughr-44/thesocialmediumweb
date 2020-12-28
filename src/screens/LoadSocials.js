@@ -942,7 +942,10 @@ class LoadSocials extends React.Component{
     
                     console.log(newRows)
                     this.setState({myTweets: newRows})
-                    this.getFollowsTweets()
+
+
+
+                    //this.getFollowsTweets()
                     
                     //this.leaveLoading()
     
@@ -954,60 +957,14 @@ class LoadSocials extends React.Component{
     
                     console.log("GETTING TWITTER FOLLOWINGS")
                     console.log(responseJson)
+
+                    var followsList = responseJson.data.data
+                    this.retrieveTweets2(followsList, token)
     
             })
 
         })
 
-        /*
-        const newRows = []
-        fetch("https://api.twitter.com/2/users/by/username/" + twitterName, {
-          headers: {
-            Authorization: "Bearer " + token
-          }
-        })
-        .then(response => response.json())
-        .then((responseJson)=> {
-            console.log(responseJson)
-            console.log(responseJson.data.id)
-            this.setState({twitterId: responseJson.data.id})
-
-
-            fetch("https://api.twitter.com/2/users/" + responseJson.data.id + "?expansions=pinned_tweet_id&tweet.fields=attachments,author_id,entities", {
-            headers: {
-                Authorization: "Bearer " + token
-            }
-            })
-            .then(response => response.json())
-            .then((responseJson)=> {
-                console.log("next getting tweets")
-                console.log(responseJson)
-                console.log(responseJson.data.id)
-                console.log(responseJson.includes)
-                console.log(responseJson.includes.tweets)
-                console.log(responseJson.includes.tweets.attachments)
-
-                //loop through here
-
-                
-                for(var i=0; i<responseJson.data.length; i++){
-                    console.log(responseJson.data[i])
-                    //const twitRow = <TwitterComponent twitterName="wheezyoutcast" postNum={responseJson.data[i].id}/>
-                    const twitRow = [twitterName, responseJson.data[i].id]
-                    newRows.push(twitRow)
-                }
-
-                this.setState({myTweets: newRows})
-                this.getFollowsTweets()
-                
-                //this.leaveLoading()
-            })
-            .catch(error=>console.log(error)) //to catch the errors if any
-
-        })
-        .catch(error=>console.log(error)) //to catch the errors if any
-        */
-        //this.leaveLoading.bind(this.state)
     }
 
     async getFollowsTweets(){
@@ -1078,6 +1035,42 @@ class LoadSocials extends React.Component{
             */
         }
         //const sortedTweets = this.sortTweets()
+        this.leaveLoading()
+    }
+
+    async retrieveTweets2(follows, token){
+        var newRows = []
+        for(var i=0; i<follows.length; i++){
+
+            const exchangeEndpoint = 'https://smbackendnodejs.herokuapp.com/getTweets'
+            axios.get(exchangeEndpoint + "?twitterName=" + follows[i].id + "&token=" + token).then(responseJson => {
+    
+                //console.log("next getting FOLLOWS tweets")
+                //console.log(responseJson)
+
+                //loop through here
+                    
+                for(var i=0; i<responseJson.data.data.length; i++){
+                    //console.log(responseJson.data.data[i])
+                    //const twitRow = <TwitterComponent twitterName="wheezyoutcast" postNum={responseJson.data[i].id}/>
+                    const twitRow = [follows[i].id, responseJson.data.data[i].id, responseJson.data.data[i].created_at]
+                    newRows.push(twitRow)
+                }
+    
+                //console.log(newRows)
+                this.setState({followsTweets: newRows})
+
+                //var tempVidList = this.state.followsTweets
+                //var combinedList = tempVidList.concat(newRows)
+
+                //this.setState({followsTweets: combinedList})
+
+
+                //const sortedTweets = this.sortTweets()
+            })
+
+        }
+        const sortedTweets = this.sortTweets()
         this.leaveLoading()
     }
 
