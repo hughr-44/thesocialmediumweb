@@ -127,6 +127,7 @@ class FeedScreen extends React.Component{
             if (user) {
                 console.log("YES logged in")
 
+                //firebase.analytics().logEvent("open_feed", {"uid": user.uid});
             } else {
               console.log("NO logged in")
               this.props.history.push("/OpenScreen");

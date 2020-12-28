@@ -88,6 +88,8 @@ class LoadSocials extends React.Component{
                 console.log("YES logged in")
 
                 this.setState({uid: user.uid})
+
+                firebase.analytics().logEvent("login", {"uid": user.uid});
             } else {
               console.log("NO logged in")
               this.props.history.push("/OpenScreen");
