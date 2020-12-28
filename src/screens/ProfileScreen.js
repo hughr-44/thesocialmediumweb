@@ -119,6 +119,8 @@ class ProfileScreen extends React.Component{
             this.setState({youtubeName: newYoutube.userName})
             this.setState({twitterName: newTwitter.userName})
             this.setState({igName: newIG.userName})
+
+            this.switchPFP()
         })
     }
 
@@ -151,7 +153,7 @@ class ProfileScreen extends React.Component{
         else if(this.state.pfpCount == 1){
             this.setState({currPFPplatform: YTLogo})
             this.setState({currPFP: this.state.ytPFP})
-            this.setState({pfpCount: 2})
+            this.setState({pfpCount: 0})
         }
         else{
             this.setState({currPFPplatform: DefaultPFP})

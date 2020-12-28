@@ -172,7 +172,7 @@ class AuthInstagram extends React.Component{
                     <Row style={{display: 'flex', justifyContent: 'center'}}>
                     <Form style={{marginTop: 60}}>
                         <Form.Group controlId="formBasicUserName">
-                            <Form.Label>Twitter Name: </Form.Label>
+                            <Form.Label style={{color: '#e8e6e3'}}>Twitter Name: </Form.Label>
                             <Form.Control type="username" placeholder="Twitter @ (don't include @)" onChange={e => this.setState({ twitterName: e.target.value })} />
                         </Form.Group>
 
