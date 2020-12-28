@@ -622,7 +622,7 @@ class OthersProfile extends React.Component{
                                     this.props.location.state.pastState
                             }}
                         >
-                            <SearchIcon style={{marginLeft: 40, marginRight: 150, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <SearchIcon style={{marginLeft: 40, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                         <Nav.Link as={Link} 
                             to={{pathname: "/InfoScreen",

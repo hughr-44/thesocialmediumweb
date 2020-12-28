@@ -190,7 +190,8 @@ class YoutubeComponent extends React.Component {
 }
 
 const youtubeComponent = {
-    backgroundColor: "#ACACAC",
+    //backgroundColor: "#ACACAC",
+    backgroundColor: "#474d50",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
