@@ -957,6 +957,7 @@ class LoadSocials extends React.Component{
     
                     console.log("GETTING TWITTER FOLLOWINGS")
                     console.log(responseJson)
+                    console.log(responseJson.data.data)
 
                     var followsList = responseJson.data.data
                     this.retrieveTweets2(followsList, token)
@@ -1045,8 +1046,8 @@ class LoadSocials extends React.Component{
             const exchangeEndpoint = 'https://smbackendnodejs.herokuapp.com/getTweets'
             axios.get(exchangeEndpoint + "?twitterName=" + follows[i].id + "&token=" + token).then(responseJson => {
     
-                //console.log("next getting FOLLOWS tweets")
-                //console.log(responseJson)
+                console.log("next getting FOLLOWS tweets")
+                console.log(responseJson)
 
                 //loop through here
                     
