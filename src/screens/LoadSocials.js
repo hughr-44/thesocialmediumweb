@@ -920,6 +920,8 @@ class LoadSocials extends React.Component{
             console.log(response)
             console.log(response.data)
 
+            this.setState({twitterId: response.data.data.id})
+
             const exchangeEndpoint2 = 'https://smbackendnodejs.herokuapp.com/getTweets'
             //local
             //const exchangeEndpoint2 = '/getTweets'
@@ -929,6 +931,7 @@ class LoadSocials extends React.Component{
                     console.log(responseJson)
 
                     //loop through here
+
                     
                     for(var i=0; i<responseJson.data.data.length; i++){
                         console.log(responseJson.data[i])
@@ -944,37 +947,15 @@ class LoadSocials extends React.Component{
                     //this.leaveLoading()
     
             })
-            /*
-            fetch("https://api.twitter.com/2/users/" + response.data.id + "?expansions=pinned_tweet_id&tweet.fields=attachments,author_id,entities", {
-            headers: {
-                Authorization: "Bearer " + token
-            }
+            
+            const exchangeEndpoint3 = 'https://smbackendnodejs.herokuapp.com/getTwitterFollowing'
+
+            axios.get(exchangeEndpoint3 + "?twitterId=" + response.data.data.id + "&token=" + token).then(responseJson => {
+    
+                    console.log("GETTING TWITTER FOLLOWINGS")
+                    console.log(responseJson)
+    
             })
-            .then(response => response.json())
-            .then((responseJson)=> {
-                console.log("next getting tweets")
-                console.log(responseJson)
-                console.log(responseJson.data.id)
-                console.log(responseJson.includes)
-                console.log(responseJson.includes.tweets)
-                console.log(responseJson.includes.tweets.attachments)
-
-                //loop through here
-
-                
-                for(var i=0; i<responseJson.data.length; i++){
-                    console.log(responseJson.data[i])
-                    //const twitRow = <TwitterComponent twitterName="wheezyoutcast" postNum={responseJson.data[i].id}/>
-                    const twitRow = [twitterName, responseJson.data[i].id]
-                    newRows.push(twitRow)
-                }
-
-                this.setState({myTweets: newRows})
-                this.getFollowsTweets()
-                
-                //this.leaveLoading()
-            })
-            .catch(error=>console.log(error))*///to catch the errors if any
 
         })
 
@@ -1149,7 +1130,8 @@ class LoadSocials extends React.Component{
         
         const collPath7 = '/mainCollection/' + this.state.uid +'/twitterInfo'
         firebase.database().ref(collPath7).update({
-            userName: this.state.twitterName
+            userName: this.state.twitterName,
+            twitterId: this.state.twitterId
         })
 
         const collPath8 = '/twitterConnections/' + this.state.twitterId

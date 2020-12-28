@@ -58,7 +58,10 @@ class InfoScreen extends React.Component{
                             <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Thank you for using The Social Medium.</h2>
                         </Row>
                         <Row style={{display: 'flex', justifyContent: 'center'}}>
-                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Please report any issues you may have came across or any suggestions you have.</h2>
+                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Please report any issues you may have came across</h2>
+                        </Row>
+                        <Row style={{display: 'flex', justifyContent: 'center'}}>
+                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">or any suggestions you have.</h2>
                         </Row>
                         <Row style={{display: 'flex', justifyContent: 'center'}}>
                             <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Twitter (preferred): @wheezyoutcast</h2>   
@@ -74,6 +77,9 @@ class InfoScreen extends React.Component{
                         </Row>
                         <Row style={{display: 'flex', justifyContent: 'center'}}>
                             <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">We are hoping to bring this functionality soon.</h2>
+                        </Row>
+                        <Row style={{display: 'flex', justifyContent: 'center'}}>
+                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Ability to unfollow coming soon.</h2>
                         </Row>
                     </Container>
                 </Container>
