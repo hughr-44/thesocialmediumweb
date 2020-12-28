@@ -106,7 +106,7 @@ class YoutubeComponent extends React.Component {
             })
             .catch(error=>console.log(error))
 
-        this.setState({commentValue: ""})
+        //this.setState({commentValue: ""})
     }
 
     clickLike(){
