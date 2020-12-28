@@ -52,7 +52,20 @@ class InfoScreen extends React.Component{
                 <Container style={{zIndex: 0}}>
                     <Container  style={tweetComponent}>
                         <Row style={{display: 'flex', justifyContent: 'center'}}>
-                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Information here</h2> 
+                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Information</h2> 
+                        </Row>
+                        <Row style={{display: 'flex', justifyContent: 'center'}}>
+                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Thank you for using The Social Medium.</h2>
+                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Please report any issues you may have came across or any suggestions you have.</h2>
+                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Twitter (preferred): @wheezyoutcast</h2>   
+                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Instagram: @ex.wheezy</h2> 
+                        </Row>
+                        <Row style={{display: 'flex', justifyContent: 'center'}}>
+                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Coming Soon</h2> 
+                        </Row>
+                        <Row style={{display: 'flex', justifyContent: 'center'}}>
+                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Currently instagram and twitter are not fully functioning.</h2>
+                            <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">We are hoping to bring this functionality soon.</h2>
                         </Row>
                     </Container>
                 </Container>
@@ -78,7 +91,7 @@ class InfoScreen extends React.Component{
                                     this.props.location.state
                             }}
                         >
-                            <HomeIcon style={{marginLeft: 110, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <HomeIcon style={{marginLeft: 100, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                         <Nav.Link as={Link} 
                             to={{pathname: "/FeedScreen",
@@ -110,7 +123,7 @@ class InfoScreen extends React.Component{
                                     this.props.location.state
                             }}
                         >
-                            <InfoIcon style={{marginLeft: 40, marginRight: 110, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                            <InfoIcon style={{marginLeft: 40, marginRight: 100, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                     </Nav>
                 </Navbar>

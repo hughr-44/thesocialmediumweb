@@ -138,6 +138,9 @@ class AuthYouTube extends React.Component{
                         <Button onClick={this.authInstagram} style={button}><h4 style={textStyle}>Auth Instagram</h4></Button>
                     </Row>
                     <Row style={{display: 'flex', justifyContent: 'center'}}>
+                        <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Skip if Wheezy hasn't set up your IG. DM him for setup.</h2>
+                    </Row>
+                    <Row style={{display: 'flex', justifyContent: 'center'}}>
                         <Button onClick={this.skipInstagram} style={button}><h4 style={textStyle}>Skip Instagram</h4></Button>
                     </Row>
                 </Container>
