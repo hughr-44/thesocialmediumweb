@@ -52,7 +52,7 @@ class InfoScreen extends React.Component{
                 <Container style={{zIndex: 0}}>
                     <Container  style={tweetComponent}>
                         <Row style={{display: 'flex', justifyContent: 'center'}}>
-                            <h1 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Information</h2> 
+                            <h1 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Information</h1> 
                         </Row>
                         <Row style={{display: 'flex', justifyContent: 'center'}}>
                             <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Thank you for using The Social Medium.</h2>
@@ -67,7 +67,7 @@ class InfoScreen extends React.Component{
                             <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Instagram: @ex.wheezy</h2> 
                         </Row>
                         <Row style={{display: 'flex', justifyContent: 'center'}}>
-                            <h1 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Coming Soon</h2> 
+                            <h1 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Coming Soon</h1> 
                         </Row>
                         <Row style={{display: 'flex', justifyContent: 'center'}}>
                             <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Currently instagram and twitter are not fully functioning.</h2>
