@@ -735,7 +735,18 @@ class LoadSocials extends React.Component{
               console.log(newRows)
 
               this.setState({myIgPosts: newRows})
-              this.setState({myIgName: newRows[0][2]})
+              //this.setState({myIgName: newRows[0][2]})
+
+
+                fetch('https://graph.instagram.com/' + userID + '?fields=username,id,media_count&access_token=' + authToken)
+                .then(response => response.json())
+                .then((responseJson)=> {
+                    console.log('response')
+                    console.log(responseJson.username)
+                    this.setState({myIgName: responseJson.username})
+                })
+                .catch(error=>console.log(error)) //to catch the errors if any
+
 
               
               //this.authTwitter()

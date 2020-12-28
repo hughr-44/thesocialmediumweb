@@ -23,6 +23,8 @@ import LoadSocials from './screens/LoadSocials';
 
 import OthersProfile from './screens/OthersProfile';
 
+import InfoScreen from './screens/InfoScreen';
+
 import firebase from "firebase";
 import 'firebase/database';
 
@@ -52,6 +54,8 @@ class App extends React.Component {
           <Route path="/FeedScreen" exact render={() => <FeedScreen />} />
           <Route path="/ProfileScreen" exact render={() => <ProfileScreen />} />
           <Route path="/SearchScreen" exact render={() => <SearchScreen />} />
+
+          <Route path="/InfoScreen" exact render={() => <InfoScreen />} />
 
           <Route path="/OthersProfile" exact render={() => <OthersProfile />} />
           </div>

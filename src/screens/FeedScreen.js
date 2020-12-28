@@ -562,6 +562,14 @@ class FeedScreen extends React.Component{
                         >
                             <SearchIcon style={{marginLeft: 40, marginRight: 150, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
+                        <Nav.Link as={Link} 
+                            to={{pathname: "/InfoScreen",
+                                state:
+                                    this.props.location.state
+                            }}
+                        >
+                            <InfoIcon style={{marginLeft: 40, marginRight: 150, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
+                        </Nav.Link>
                     </Nav>
                 </Navbar>
 
