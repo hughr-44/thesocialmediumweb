@@ -1024,7 +1024,7 @@ class LoadSocials extends React.Component{
 
 
 
-                    const sortedTweets = this.sortTweets()
+                    //const sortedTweets = this.sortTweets()
     
                 })
                 }
@@ -1050,7 +1050,21 @@ class LoadSocials extends React.Component{
         for(var i=0; i<follows.length; i++){
 
             console.log(i)
+            var tweetsResponse = await this.waitGettingTweets(follows[i].id, token)
 
+            if(tweetsResponse.data.data){
+                for(var j=0; j<tweetsResponse.data.data.length; j++){
+                    //console.log(responseJson.data.data[i])
+                    //const twitRow = <TwitterComponent twitterName="wheezyoutcast" postNum={responseJson.data[i].id}/>
+                    const twitRow = [follows[j].id, tweetsResponse.data.data[j].id, tweetsResponse.data.data[j].created_at]
+                    newRows.push(twitRow)
+                }
+            }
+            else{
+                console.log("DATA WAS UNDEFINED")
+            }
+
+            /*
             const exchangeEndpoint = 'https://smbackendnodejs.herokuapp.com/getTweets'
             axios.get(exchangeEndpoint + "?twitterName=" + follows[i].id + "&token=" + token).then(responseJson => {
     
@@ -1087,12 +1101,20 @@ class LoadSocials extends React.Component{
                 else{
                     console.log("DATA WAS UNDEFINED")
                 }
-            })
+            })*/
 
         }
         //const sortedTweets = this.sortTweets()
         return newRows
         //this.leaveLoading()
+    }
+
+    waitGettingTweets(user, token){
+        
+        const exchangeEndpoint = 'https://smbackendnodejs.herokuapp.com/getTweets'
+        var response = axios.get(exchangeEndpoint + "?twitterName=" + user + "&token=" + token)
+        console.log(response)
+        return response
     }
 
     async leaveLoading(){
