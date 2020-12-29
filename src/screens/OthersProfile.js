@@ -304,7 +304,7 @@ class OthersProfile extends React.Component{
         })
 
         const exchangeEndpoint2 = 'https://smbackendnodejs.herokuapp.com/getTwitterUser'
-        const gettingUser = await axios.get(exchangeEndpoint2 + "?twitterName=" + twitterName + "&token=" + this.state.twitterAuth)
+        const gettingUser = axios.get(exchangeEndpoint2 + "?twitterName=" + twitterName + "&token=" + this.state.twitterAuth)
         const pfpLink = gettingUser.data.data.profile_image_url
         this.setState({twitterPFP: pfpLink})
       
