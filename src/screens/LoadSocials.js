@@ -1024,7 +1024,7 @@ class LoadSocials extends React.Component{
 
 
 
-                    //const sortedTweets = this.sortTweets()
+                    const sortedTweets = this.sortTweets()
     
                 })
                 }
@@ -1041,7 +1041,7 @@ class LoadSocials extends React.Component{
             }
             */
         }
-        const sortedTweets = this.sortTweets()
+        //const sortedTweets = this.sortTweets()
         this.leaveLoading()
     }
 
