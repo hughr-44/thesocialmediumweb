@@ -105,7 +105,7 @@ class LoadScreen extends React.Component{
                         <h2 style={{color: '#e8e6e3'}} className="display-1 font-weight-bolder">Authorize Twitch</h2>
                     </Row>
                     <Row style={{display: 'flex', justifyContent: 'center'}}>
-                        <Button onClick={this.authTwitch} style={button}><h4 style={textStyle}>Auth</h4></Button>
+                        <Button onClick={this.authTwitch} style={button}><h4 style={textStyle}>Auth Twitch</h4></Button>
                     </Row>
 
                 </Container>

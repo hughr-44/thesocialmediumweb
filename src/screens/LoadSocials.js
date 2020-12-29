@@ -1356,7 +1356,7 @@ class LoadSocials extends React.Component{
         console.log(sortedTweets)
         const tweetRows = []
 
-        const favsRows = []
+        var favsRows = []
         const favsList = this.state.favsTwitterList
 
         for(var i=0; i<sortedTweets.length; i++){
@@ -1370,7 +1370,7 @@ class LoadSocials extends React.Component{
                 }
             }
         }
-        console.log("FAVS ROWS")
+        console.log("FAVS ROWS TWITTER")
         console.log(favsRows)
         this.setState({createdFavsTweetRows: favsRows})
         this.setState({createdTweetRows: tweetRows})
@@ -1459,7 +1459,7 @@ class LoadSocials extends React.Component{
         var sortedIg = sortedIg2
         var igRows = []
 
-        const favsRows = []
+        var favsRows = []
         const favsList = this.state.favsIgList
 
         for(var i=0; i<sortedIg.length; i++){
@@ -1468,12 +1468,12 @@ class LoadSocials extends React.Component{
             igRows.push(newIg)
 
             for(var j=0; j<favsList.length; j++){
-                if(sortedIg[i][0] ==  favsList[j]){
+                if(sortedIg[i][2] ==  favsList[j]){
                     favsRows.push(newIg)
                 }
             }
         }
-        console.log("FAVS ROWS")
+        console.log("FAVS ROWS IG")
         console.log(favsRows)
         this.setState({createdFavsIgRows: favsRows})
         this.setState({createdIgRows: igRows})
@@ -1561,7 +1561,7 @@ class LoadSocials extends React.Component{
         var ytVidRows = []
         var sortedVids = sortedVids2
 
-        const favsRows = []
+        var favsRows = []
         const favsList = this.state.favsYtList
 
         //for(var i=0; i<sortedVids.length; i++)
@@ -1577,7 +1577,7 @@ class LoadSocials extends React.Component{
             }
         }
         //this.setState({ytSubVids: ytVidRows})
-        console.log("FAVS ROWS")
+        console.log("FAVS ROWS YT")
         console.log(favsRows)
         this.setState({createdFavsYtRows: favsRows})
         this.setState({createdYtSubVids: ytVidRows})
@@ -1614,7 +1614,7 @@ class LoadSocials extends React.Component{
         var twitchRows = []
         var liveStreams = this.state.followsTwitchStreams
 
-        const favsRows = []
+        var favsRows = []
         const favsList = this.state.favsTwitchList
 
         for(var i=0; i<liveStreams.length; i++){ //liveStreams.length
@@ -1629,7 +1629,7 @@ class LoadSocials extends React.Component{
                 }
             }
         }
-        console.log("FAVS ROWS")
+        console.log("FAVS ROWS TWITCH")
         console.log(favsRows)
         this.setState({createdFavsTwitchRows: favsRows})
         //this.setState({twitchStreams: twitchRows})
