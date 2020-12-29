@@ -1569,6 +1569,12 @@ class LoadSocials extends React.Component{
             //console.log(sortedVids[i][1])
             const newVid = <YoutubeComponent key={sortedVids[i][0][0]} date={sortedVids[i][1]} videoId={sortedVids[i][0][1]} thumbnailUrl={sortedVids[i][0][2]} vidTitle={sortedVids[i][0][3]} channelName={sortedVids[i][0][4]} profilePic={sortedVids[i][0][5]} userName={sortedVids[i][0][6]} bio={sortedVids[i][0][7]} description={sortedVids[i][0][8]} authToken={sortedVids[i][0][9]} myUID={this.state.uid}/>
             ytVidRows.push(newVid)
+
+            for(var j=0; j<favsList.length; j++){
+                if(myVids[i][0] ==  favsList[j]){
+                    favsRows.push(newVid)
+                }
+            }
         }
         //this.setState({ytSubVids: ytVidRows})
         console.log("FAVS ROWS")
@@ -1587,12 +1593,6 @@ class LoadSocials extends React.Component{
             //console.log(sortedVids[i][1])
             const newVid = <YoutubeComponent key={myVids[i][0]} date={myVids[i][10]} videoId={myVids[i][1]} thumbnailUrl={myVids[i][2]} vidTitle={myVids[i][3]} channelName={myVids[i][4]} profilePic={myVids[i][5]} userName={myVids[i][6]} bio={myVids[i][7]} description={myVids[i][8]} authToken={myVids[i][9]}  myUID={this.state.uid}/>
             ytVidRows.push(newVid)
-
-            for(var j=0; j<favsList.length; j++){
-                if(myVids[i][0] ==  favsList[j]){
-                    favsRows.push(newVid)
-                }
-            }
         }
         //this.setState({ytSubVids: ytVidRows})
         this.setState({createdMyYtSubVids: ytVidRows})
