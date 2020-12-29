@@ -1355,11 +1355,24 @@ class LoadSocials extends React.Component{
         console.log("creating tweet rows")
         console.log(sortedTweets)
         const tweetRows = []
+
+        const favsRows = []
+        const favsList = this.state.favsTwitterList
+
         for(var i=0; i<sortedTweets.length; i++){
             //console.log(sortedVids[i][1])
             const newTweet = <TwitterComponent twitterName={sortedTweets[i][0]} postNum={sortedTweets[i][1]} myUID={this.state.uid} profilePic={sortedTweets[i][3]}/>
             tweetRows.push(newTweet)
+
+            for(var j=0; j<favsList.length; j++){
+                if(sortedTweets[i][0] == sortedTweets[i][0]){
+                    favsRows.push(newTweet)
+                }
+            }
         }
+        console.log("FAVS ROWS")
+        console.log(favsRows)
+        this.setState({createdFavsTweetRows: favsRows})
         this.setState({createdTweetRows: tweetRows})
         this.combineRows()
         return tweetRows
