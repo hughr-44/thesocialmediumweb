@@ -922,6 +922,9 @@ class LoadSocials extends React.Component{
 
             this.setState({twitterId: response.data.data.id})
 
+            const myPfp = response.data.data.profile_image_url
+            console.log(myPfp)
+
             const exchangeEndpoint2 = 'https://smbackendnodejs.herokuapp.com/getTweets'
             //local
             //const exchangeEndpoint2 = '/getTweets'
@@ -936,7 +939,7 @@ class LoadSocials extends React.Component{
                     for(var i=0; i<responseJson.data.data.length; i++){
                         console.log(responseJson.data[i])
                         //const twitRow = <TwitterComponent twitterName="wheezyoutcast" postNum={responseJson.data[i].id}/>
-                        const twitRow = [twitterName, responseJson.data.data[i].id, responseJson.data.data[i].created_at, response.data.data.profile_image_url]
+                        const twitRow = [twitterName, responseJson.data.data[i].id, responseJson.data.data[i].created_at, myPfp]
                         newRows.push(twitRow)
                     }
     
