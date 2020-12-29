@@ -108,7 +108,7 @@ class TwitterComponent extends React.Component {
 
                 <Row style={{display: 'flex', justifyContent: 'center', height: 75}}>
                     <Col style={{display: 'flex', flex: 1}}>
-                        <Avatar style={{width: 50, height: 50, marginLeft: 10}} src={DefaultPFP} />
+                        <Avatar style={{width: 50, height: 50, marginLeft: 10}} src={this.props.profilePic} />
                     </Col>
                     <Col style={{display: 'flex', flex: 5, flexDirection: "column", justifyContent: "flex-start", alignSelf: "start"}}>
                         <Row style={{display: 'flex', flex: 1, justifyContent: "flex-start", alignSelf: "start"}}>

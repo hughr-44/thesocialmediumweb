@@ -936,7 +936,7 @@ class LoadSocials extends React.Component{
                     for(var i=0; i<responseJson.data.data.length; i++){
                         console.log(responseJson.data[i])
                         //const twitRow = <TwitterComponent twitterName="wheezyoutcast" postNum={responseJson.data[i].id}/>
-                        const twitRow = [twitterName, responseJson.data.data[i].id, responseJson.data.data[i].created_at]
+                        const twitRow = [twitterName, responseJson.data.data[i].id, responseJson.data.data[i].created_at, response.data.data.profile_image_url]
                         newRows.push(twitRow)
                     }
     
@@ -1005,12 +1005,18 @@ class LoadSocials extends React.Component{
                     console.log("next getting FOLLOWS tweets")
                     console.log(responseJson)
 
+                    var pfpLink = ''
+                    const exchangeEndpoint2 = 'https://smbackendnodejs.herokuapp.com/getTwitterUser'
+                    axios.get(exchangeEndpoint2 + "?twitterName=" + twitterName + "&token=" + twitterAuth).then(response => {
+                        pfpLink = response.data.data.profile_image_url
+                    })
+                    console.log(pfpLink)
                     //loop through here
                     
                     for(var i=0; i<responseJson.data.data.length; i++){
                         console.log(responseJson.data.data[i])
                         //const twitRow = <TwitterComponent twitterName="wheezyoutcast" postNum={responseJson.data[i].id}/>
-                        const twitRow = [twitterName, responseJson.data.data[i].id, responseJson.data.data[i].created_at]
+                        const twitRow = [twitterName, responseJson.data.data[i].id, responseJson.data.data[i].created_at, pfpLink]
                         newRows.push(twitRow)
                     }
     
@@ -1291,7 +1297,7 @@ class LoadSocials extends React.Component{
         const tweetRows = []
         for(var i=0; i<sortedTweets.length; i++){
             //console.log(sortedVids[i][1])
-            const newTweet = <TwitterComponent twitterName={sortedTweets[i][0]} postNum={sortedTweets[i][1]} myUID={this.state.uid}/>
+            const newTweet = <TwitterComponent twitterName={sortedTweets[i][0]} postNum={sortedTweets[i][1]} myUID={this.state.uid} profilePic={sortedTweets[i][3]}/>
             tweetRows.push(newTweet)
         }
         this.setState({createdTweetRows: tweetRows})
@@ -1305,7 +1311,7 @@ class LoadSocials extends React.Component{
         const tweetRows = []
         for(var i=0; i<sortedTweets.length; i++){
             //console.log(sortedVids[i][1])
-            const newTweet = <TwitterComponent twitterName={sortedTweets[i][0]} postNum={sortedTweets[i][1]} myUID={this.state.uid}/>
+            const newTweet = <TwitterComponent twitterName={sortedTweets[i][0]} postNum={sortedTweets[i][1]} myUID={this.state.uid} profilePic={sortedTweets[i][3]}/>
             tweetRows.push(newTweet)
         }
         this.setState({createdMyTweetRows: tweetRows})
