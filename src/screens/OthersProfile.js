@@ -272,7 +272,7 @@ class OthersProfile extends React.Component{
         .catch(error=>console.log(error)) //to catch the errors if any
     }
 
-    updateTwitter(){
+    async updateTwitter(){
 
         console.log("getting tweets")
 
@@ -304,7 +304,7 @@ class OthersProfile extends React.Component{
         })
 
         const exchangeEndpoint2 = 'https://smbackendnodejs.herokuapp.com/getTwitterUser'
-        const gettingUser = axios.get(exchangeEndpoint2 + "?twitterName=" + twitterName + "&token=" + this.state.twitterAuth)
+        const gettingUser = await axios.get(exchangeEndpoint2 + "?twitterName=" + twitterName + "&token=" + this.state.twitterAuth)
         console.log(gettingUser)
         const pfpLink = gettingUser.data.data.profile_image_url
         this.setState({twitterPFP: pfpLink})
