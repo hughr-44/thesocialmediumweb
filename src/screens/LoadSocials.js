@@ -1365,7 +1365,7 @@ class LoadSocials extends React.Component{
             tweetRows.push(newTweet)
 
             for(var j=0; j<favsList.length; j++){
-                if(sortedTweets[i][0] == sortedTweets[i][0]){
+                if(sortedTweets[i][0] == favsList[j]){
                     favsRows.push(newTweet)
                 }
             }
@@ -1458,11 +1458,24 @@ class LoadSocials extends React.Component{
         console.log("creating ig rows")
         var sortedIg = sortedIg2
         var igRows = []
+
+        const favsRows = []
+        const favsList = this.state.favsIgList
+
         for(var i=0; i<sortedIg.length; i++){
             //console.log(sortedVids[i][1])
             const newIg = <InstagramComponent postID={sortedIg[i][0]} name={sortedIg[i][2]} token={this.state.igToken} myUID={this.state.uid} igID={sortedIg[i][4]} mediaUrl={sortedIg[i][5]}/>   
             igRows.push(newIg)
+
+            for(var j=0; j<favsList.length; j++){
+                if(sortedIg[i][0] ==  favsList[j]){
+                    favsRows.push(newIg)
+                }
+            }
         }
+        console.log("FAVS ROWS")
+        console.log(favsRows)
+        this.setState({createdFavsIgRows: favsRows})
         this.setState({createdIgRows: igRows})
         return igRows
     }
@@ -1547,6 +1560,10 @@ class LoadSocials extends React.Component{
     createYtRows(sortedVids2){
         var ytVidRows = []
         var sortedVids = sortedVids2
+
+        const favsRows = []
+        const favsList = this.state.favsYtList
+
         //for(var i=0; i<sortedVids.length; i++)
         for(var i=0; i<sortedVids.length; i++){
             //console.log(sortedVids[i][1])
@@ -1554,6 +1571,9 @@ class LoadSocials extends React.Component{
             ytVidRows.push(newVid)
         }
         //this.setState({ytSubVids: ytVidRows})
+        console.log("FAVS ROWS")
+        console.log(favsRows)
+        this.setState({createdFavsYtRows: favsRows})
         this.setState({createdYtSubVids: ytVidRows})
         this.loadTwitter()
         return ytVidRows
@@ -1567,6 +1587,12 @@ class LoadSocials extends React.Component{
             //console.log(sortedVids[i][1])
             const newVid = <YoutubeComponent key={myVids[i][0]} date={myVids[i][10]} videoId={myVids[i][1]} thumbnailUrl={myVids[i][2]} vidTitle={myVids[i][3]} channelName={myVids[i][4]} profilePic={myVids[i][5]} userName={myVids[i][6]} bio={myVids[i][7]} description={myVids[i][8]} authToken={myVids[i][9]}  myUID={this.state.uid}/>
             ytVidRows.push(newVid)
+
+            for(var j=0; j<favsList.length; j++){
+                if(myVids[i][0] ==  favsList[j]){
+                    favsRows.push(newVid)
+                }
+            }
         }
         //this.setState({ytSubVids: ytVidRows})
         this.setState({createdMyYtSubVids: ytVidRows})
@@ -1587,12 +1613,25 @@ class LoadSocials extends React.Component{
     createTwitchRows(){
         var twitchRows = []
         var liveStreams = this.state.followsTwitchStreams
+
+        const favsRows = []
+        const favsList = this.state.favsTwitchList
+
         for(var i=0; i<liveStreams.length; i++){ //liveStreams.length
             //console.log(liveStreams[i].user_name)
             const twitchRow = <TwitchComponent key={liveStreams[i][0]} userName={liveStreams[i][1]} streamTitle={liveStreams[i][2]} twitchAuth={liveStreams[i][3]} myName={liveStreams[i][4]} thumbnail={liveStreams[i][5]} profilePic={liveStreams[i][6]} myUID={this.state.uid}/>
             //const twitchRow = [liveStreams[i].user_name, liveStreams[i].user_name, liveStreams[i].title, this.state.twitchAuthToken, this.state.twitchName]
             twitchRows.push(twitchRow)
+
+            for(var j=0; j<favsList.length; j++){
+                if(liveStreams[i][0] ==  favsList[j]){
+                    favsRows.push(twitchRow)
+                }
+            }
         }
+        console.log("FAVS ROWS")
+        console.log(favsRows)
+        this.setState({createdFavsTwitchRows: favsRows})
         //this.setState({twitchStreams: twitchRows})
         this.setState({createdTwitchStreams: twitchRows})
         return twitchRows
