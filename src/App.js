@@ -15,6 +15,8 @@ import AuthInstagram from './screens/AuthInstagram';
 
 import FeedScreen from './screens/FeedScreen';
 
+import FavsScreen from './screens/FavsScreen';
+
 import ProfileScreen from './screens/ProfileScreen';
 
 import SearchScreen from './screens/SearchScreen';
@@ -52,6 +54,7 @@ class App extends React.Component {
           <Route path="/LoadSocials" exact render={() => <LoadSocials />} />
 
           <Route path="/FeedScreen" exact render={() => <FeedScreen />} />
+          <Route path="/FavsScreen" exact render={() => <FavsScreen />} />
           <Route path="/ProfileScreen" exact render={() => <ProfileScreen />} />
           <Route path="/SearchScreen" exact render={() => <SearchScreen />} />
 

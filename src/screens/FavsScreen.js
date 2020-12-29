@@ -64,7 +64,7 @@ import ScrollPagedView from 'react-scroll-paged-view'
 
 import StickyFooter from 'react-sticky-footer';
 
-class FeedScreen extends React.Component{
+class FavsScreen extends React.Component{
 
     constructor(props){
         super(props);
@@ -82,28 +82,28 @@ class FeedScreen extends React.Component{
             postNum: 0,
             combinedRows: [],
             feedList: [],
-            ytSubVidsData: props.location.state.subsVids,
+            ytSubVidsData: props.location.state.favsVids,
             //ytSubVids: [],
             currentYtSubVids: [],
-            ytSubVids: props.location.state.createdYtSubVids,
-            twitchStreamsData: props.location.state.followsTwitchStreams,
+            ytSubVids: props.location.state.createdFavsYtSubVids,
+            twitchStreamsData: props.location.state.favsTwitchStreams,
             //twitchStreams: [],
             currentTwitchStreams: [],
-            twitchStreams: props.location.state.createdTwitchStreams,
-            tweetsData: props.location.state.followsTweets,
+            twitchStreams: props.location.state.createdFavsTwitchRows,
+            tweetsData: props.location.state.favsTweets,
             //tweetRows: [],
             currentTweetRows: [],
-            tweetRows: props.location.state.createdTweetRows,
-            igData: props.location.state.followsIgPosts,
+            tweetRows: props.location.state.createdFavsTweetRows,
+            igData: props.location.state.favsIgPosts,
             //igRows: [],
             currentIgRows: [],
-            igRows: props.location.state.createdIgRows,
+            igRows: props.location.state.createdFavsIgRows,
             currNumPosts: 20,
             feedFilter: "all",
 
-            combinedList: props.location.state.combinedPosts,
+            combinedList: props.location.state.combinedFavsPosts,
 
-            currentFeed: props.location.state.combinedPosts.slice(0, 20)
+            currentFeed: props.location.state.combinedFavsPosts.slice(0, 20)
         };
         console.log("in feed screen")
         //console.log(this.props.location.state.subsVids)
@@ -734,4 +734,4 @@ const textStyle2 = {
     alightItems: "center"
 }
 
-export default withRouter(FeedScreen);
+export default withRouter(FavsScreen);

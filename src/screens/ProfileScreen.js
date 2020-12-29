@@ -250,7 +250,7 @@ class ProfileScreen extends React.Component{
                             <HomeIcon style={{marginLeft: 100, marginRight: 40, color: 'black', maxWidth: '50px', maxHeight: '50px', minWidth: '50px', minHeight: '50px'}} />
                         </Nav.Link>
                         <Nav.Link as={Link} 
-                            to={{pathname: "/FeedScreen",
+                            to={{pathname: "/FavsScreen",
                                 state:
                                     this.props.location.state
                             }}
