@@ -1571,7 +1571,7 @@ class LoadSocials extends React.Component{
             ytVidRows.push(newVid)
 
             for(var j=0; j<favsList.length; j++){
-                if(myVids[i][0] ==  favsList[j]){
+                if(sortedVids[i][0][6] ==  favsList[j]){
                     favsRows.push(newVid)
                 }
             }
