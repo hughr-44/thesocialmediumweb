@@ -945,12 +945,12 @@ class LoadSocials extends React.Component{
 
 
 
-                    //this.getFollowsTweets()
+                    this.getFollowsTweets()
                     
                     //this.leaveLoading()
     
             })
-            
+            /*
             const exchangeEndpoint3 = 'https://smbackendnodejs.herokuapp.com/getTwitterFollowing'
 
             axios.get(exchangeEndpoint3 + "?twitterId=" + response.data.data.id + "&token=" + token).then(async (responseJson) => {
@@ -969,7 +969,7 @@ class LoadSocials extends React.Component{
                     this.leaveLoading()
                     console.log("leave loading called")
             })
-
+            */
         })
 
     }
@@ -1041,7 +1041,7 @@ class LoadSocials extends React.Component{
             }
             */
         }
-        //const sortedTweets = this.sortTweets()
+        const sortedTweets = this.sortTweets()
         this.leaveLoading()
     }
 

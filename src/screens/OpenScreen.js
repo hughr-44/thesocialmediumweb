@@ -6,6 +6,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button'
 
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterTweetEmbed } from 'react-twitter-embed';
+import { Timeline } from 'react-twitter-widgets'
+
 class OpenScreen extends React.Component{
 
     constructor(props){
