@@ -170,7 +170,7 @@ class LoadSocials extends React.Component{
                 const collPath2 = '/mainCollection/' + favsList[i]
                 firebase.database().ref(collPath2).once('value').then((snapshot) => {
                     tempTwitchFavs.push(snapshot.child('twitchInfo').val().userName)
-                    tempYtFavs.push(snapshot.child('ytInfo').val().userName)
+                    tempYtFavs.push(snapshot.child('ytInfo').val().youtubeID)
                     tempTwitterFavs.push(snapshot.child('twitterInfo').val().userName)
                     tempIgFavs.push(snapshot.child('igInfo').val().userName)                 
                 })
