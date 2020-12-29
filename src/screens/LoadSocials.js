@@ -960,7 +960,11 @@ class LoadSocials extends React.Component{
                     console.log(responseJson.data.data)
 
                     var followsList = responseJson.data.data
-                    this.retrieveTweets2(followsList, token)
+
+                    var followsTweets = await this.retrieveTweets2(followsList, token)
+                    this.setState({followsTweets: followsTweets})
+                    var followsTweetsSorted = await this.sortTweets()
+                    this.leaveLoading()
     
             })
 
@@ -1048,6 +1052,8 @@ class LoadSocials extends React.Component{
     
                 console.log("next getting FOLLOWS tweets")
                 console.log(responseJson)
+                console.log(i)
+                console.log(follows.length)
 
                 //loop through here
 
@@ -1081,7 +1087,8 @@ class LoadSocials extends React.Component{
 
         }
         //const sortedTweets = this.sortTweets()
-        this.leaveLoading()
+        return newRows
+        //this.leaveLoading()
     }
 
     async leaveLoading(){
@@ -1248,6 +1255,7 @@ class LoadSocials extends React.Component{
         const tweetRows = this.createTweetRows(totalTweetList)
         const tweetMyRows = this.createMyTweetRows()
         //this.setState({createdTweetRows: tweetRows})
+        
         return totalTweetList
     }
 

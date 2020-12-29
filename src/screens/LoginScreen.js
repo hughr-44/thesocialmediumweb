@@ -88,7 +88,7 @@ class LoginScreen extends React.Component{
                     <Form style={{marginTop: 60}}>
 
                     <Form.Group controlId="formErrorMessage">
-                        <Form.Label>{this.state.errorMessage}</Form.Label>
+                        <Form.Label style={{color: '#e8e6e3'}}>{this.state.errorMessage}</Form.Label>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicEmail">
@@ -97,7 +97,7 @@ class LoginScreen extends React.Component{
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password: </Form.Label>
+                        <Form.Label style={{color: '#e8e6e3'}}>Password: </Form.Label>
                         <Form.Control type="password" placeholder="Password" onChange={e => this.setState({ password: e.target.value })} />
                     </Form.Group>
                     <Button onClick={this.handleLogin} style={button} variant="primary" type="submit">
