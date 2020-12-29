@@ -1056,7 +1056,7 @@ class LoadSocials extends React.Component{
                 for(var j=0; j<tweetsResponse.data.data.length; j++){
                     //console.log(responseJson.data.data[i])
                     //const twitRow = <TwitterComponent twitterName="wheezyoutcast" postNum={responseJson.data[i].id}/>
-                    const twitRow = [follows[j].id, tweetsResponse.data.data[j].id, tweetsResponse.data.data[j].created_at]
+                    const twitRow = [tweetsResponse.data.data[j].name, tweetsResponse.data.data[j].id, tweetsResponse.data.data[j].created_at]
                     newRows.push(twitRow)
                 }
             }
