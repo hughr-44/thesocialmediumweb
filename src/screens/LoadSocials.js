@@ -962,10 +962,12 @@ class LoadSocials extends React.Component{
                     var followsList = responseJson.data.data
 
                     var followsTweets = await this.retrieveTweets2(followsList, token)
+                    console.log("RETREIVE TWEETS 2")
                     this.setState({followsTweets: followsTweets})
                     var followsTweetsSorted = await this.sortTweets()
+                    console.log("TWEETS SORTED")
                     this.leaveLoading()
-    
+                    console.log("leave loading called")
             })
 
         })
@@ -1047,6 +1049,8 @@ class LoadSocials extends React.Component{
         var newRows = []
         for(var i=0; i<follows.length; i++){
 
+            console.log(i)
+
             const exchangeEndpoint = 'https://smbackendnodejs.herokuapp.com/getTweets'
             axios.get(exchangeEndpoint + "?twitterName=" + follows[i].id + "&token=" + token).then(responseJson => {
     
@@ -1059,10 +1063,10 @@ class LoadSocials extends React.Component{
 
                 if(responseJson.data.data){
                     
-                    for(var i=0; i<responseJson.data.data.length; i++){
+                    for(var j=0; j<responseJson.data.data.length; j++){
                         //console.log(responseJson.data.data[i])
                         //const twitRow = <TwitterComponent twitterName="wheezyoutcast" postNum={responseJson.data[i].id}/>
-                        const twitRow = [follows[i].id, responseJson.data.data[i].id, responseJson.data.data[i].created_at]
+                        const twitRow = [follows[j].id, responseJson.data.data[j].id, responseJson.data.data[j].created_at]
                         newRows.push(twitRow)
                     }
         
