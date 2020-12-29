@@ -1003,17 +1003,14 @@ class LoadSocials extends React.Component{
                 const exchangeEndpoint = 'https://smbackendnodejs.herokuapp.com/getTweets'
                 //local
                 //const exchangeEndpoint = '/getTweets'
-                axios.get(exchangeEndpoint + "?twitterName=" + twitterName + "&token=" + twitterAuth).then(responseJson => {
+                axios.get(exchangeEndpoint + "?twitterName=" + twitterName + "&token=" + twitterAuth).then(async (responseJson) => {
     
                     console.log("next getting FOLLOWS tweets")
                     console.log(responseJson)
 
-                    var pfpLink = ''
                     const exchangeEndpoint2 = 'https://smbackendnodejs.herokuapp.com/getTwitterUser'
-                    axios.get(exchangeEndpoint2 + "?twitterName=" + twitterName + "&token=" + twitterAuth).then(response => {
-                        pfpLink = response.data.data.profile_image_url
-                    })
-                    console.log(pfpLink)
+                    const gettingUser = await axios.get(exchangeEndpoint2 + "?twitterName=" + twitterName + "&token=" + twitterAuth)
+                    const pfpLink = gettingUser.data.data.profile_image_url
                     //loop through here
                     
                     for(var i=0; i<responseJson.data.data.length; i++){
