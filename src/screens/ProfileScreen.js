@@ -84,6 +84,7 @@ class ProfileScreen extends React.Component{
 
             twitchPFP: this.props.location.state.myTwitchStream[6],
             ytPFP: this.props.location.state.myYTvids[0][5],
+            twitterPFP: this.props.location.state.myTweets[0][3],
             currPFP: DefaultPFP,
             pfpCount: 0,
             currPFPplatform: DefaultPFP
@@ -153,6 +154,11 @@ class ProfileScreen extends React.Component{
         else if(this.state.pfpCount == 1){
             this.setState({currPFPplatform: YTLogo})
             this.setState({currPFP: this.state.ytPFP})
+            this.setState({pfpCount: 2})
+        }
+        else if(this.state.pfpCount == 2){
+            this.setState({currPFPplatform: TwitterLogo})
+            this.setState({currPFP: this.state.twitterPFP})
             this.setState({pfpCount: 0})
         }
         else{

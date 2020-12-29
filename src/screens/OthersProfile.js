@@ -112,6 +112,7 @@ class OthersProfile extends React.Component{
 
             twitchPFP: DefaultPFP,
             ytPFP: DefaultPFP,
+            twitterPFP: DefaultPFP,
             currPFP: DefaultPFP,
             pfpCount: 0,
             currPFPplatform: DefaultPFP,
@@ -301,6 +302,11 @@ class OthersProfile extends React.Component{
             this.setState({rows: newRows})
 
         })
+
+        const exchangeEndpoint2 = 'https://smbackendnodejs.herokuapp.com/getTwitterUser'
+        const gettingUser = await axios.get(exchangeEndpoint2 + "?twitterName=" + twitterName + "&token=" + this.state.twitterAuth)
+        const pfpLink = gettingUser.data.data.profile_image_url
+        this.setState({twitterPFP: pfpLink})
       
     }
 
@@ -520,6 +526,11 @@ class OthersProfile extends React.Component{
         else if(this.state.pfpCount == 1){
             this.setState({currPFPplatform: YTLogo})
             this.setState({currPFP: this.state.ytPFP})
+            this.setState({pfpCount: 2})
+        }
+        else if(this.state.pfpCount == 2){
+            this.setState({currPFPplatform: TwitterLogo})
+            this.setState({currPFP: this.state.twitterPFP})
             this.setState({pfpCount: 0})
         }
         else{

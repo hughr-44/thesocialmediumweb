@@ -33,11 +33,18 @@ class LoadSocials extends React.Component{
 
             doneLoading: false,
 
+            favsList: [],
+            favsTwitchList: [],
+            favsYtList: [],
+            favsTwitterList: [],
+            favsIgList: [],
+
             twitchToken: "",
             twitchID: "",
             twitchName: "",
             myTwitchStream: [],
             followsTwitchStreams: [],
+            favsTwitchStreams: [],
 
             youtubeToken: "",
             youtubeID: "",
@@ -46,6 +53,7 @@ class LoadSocials extends React.Component{
             nextPageToken: "",
             ytSubsList: [],
             subsVids: [],
+            favsVids: [],
             totalSubsFetched: 0,
 
             igToken: "",
@@ -53,12 +61,14 @@ class LoadSocials extends React.Component{
             myIgPosts: [],
             myIgName: "",
             followsIgPosts: [],
+            favsIgPosts: [],
 
             twitterToken: "",
             twitterName: "",
             myTweets: [],
             twitterId: "",
             followsTweets: [],
+            favsTweets: [],
 
             createdTweetRows: [],
             createdIgRows: [],
@@ -71,6 +81,11 @@ class LoadSocials extends React.Component{
             createdMyIgRows: [],
             createdMyYtSubVids: [],
             createdMyTwitchStreams: [],
+
+            createdFavsTweetRows: [],
+            createdFavsIgRows: [],
+            createdFavsYtSubVids: [],
+            createdFavsTwitchStreams: [],
 
             displayName: '',
 
@@ -112,9 +127,12 @@ class LoadSocials extends React.Component{
         console.log('ig token')
         console.log(igToken)
 
-        this.loadTwitch()
-        this.loadYt()
-        this.loadIg()
+
+        this.makeFavLists()
+
+        //this.loadTwitch()
+        //this.loadYt()
+        //this.loadIg()
         //this.loadTwitter()
     }
     
@@ -124,11 +142,53 @@ class LoadSocials extends React.Component{
         firebase.database().ref(collPath).once('value').then((snapshot) => {
             const newTwitch = snapshot.child('twitchInfo').val()
             const displayName = snapshot.child('displayName').val()
+            const favsList = snapshot.child('favsList').val()
             this.setState({displayName: displayName})
 
             this.setState({twitchToken: newTwitch.twitchAuthToken})
 
+            //this.setState({favsList: favsList})
+
+            //this.makeFavLists()
             this.getStreams()
+        })
+    }
+
+    makeFavLists(){
+        console.log("getting favs list")
+        const collPath = '/mainCollection/' + this.state.uid
+        var tempTwitchFavs = []
+        var tempYtFavs = []
+        var tempTwitterFavs = []
+        var tempIgFavs = []
+        firebase.database().ref(collPath).once('value').then((snapshot) => {
+
+            const favsList = snapshot.child('favsList').val()
+            this.setState({favsList: favsList})
+
+            for(var i=0; i<favsList.length; i++){
+                const collPath2 = '/mainCollection/' + favsList[i]
+                firebase.database().ref(collPath2).once('value').then((snapshot) => {
+                    tempTwitchFavs.push(snapshot.child('twitchInfo').val().userName)
+                    tempYtFavs.push(snapshot.child('ytInfo').val().userName)
+                    tempTwitterFavs.push(snapshot.child('twitterInfo').val().userName)
+                    tempIgFavs.push(snapshot.child('igInfo').val().userName)                 
+                })
+            }
+            
+        })
+        .then(() => {
+            console.log("favs list")
+            console.log(tempTwitchFavs)
+            this.setState({favsTwitchList: tempTwitchFavs})
+            this.setState({favsYtList: tempYtFavs})
+            this.setState({favsTwitterList: tempTwitterFavs})
+            this.setState({favsIgList: tempIgFavs})
+        })
+        .then(() => {
+            this.loadTwitch()
+            this.loadYt()
+            this.loadIg()
         })
     }
 
