@@ -903,7 +903,7 @@ class LoadSocials extends React.Component{
         })
     }
 
-    getTweets(token, twitterName){
+    async getTweets(token, twitterName){
         // TEMPORARY UNTIL TWITTER APIv2 COMES OUT
 
         //let twitterLoadRow = <Text style={styles.greeting}>Loading the bird app...</Text>
@@ -953,7 +953,7 @@ class LoadSocials extends React.Component{
             
             const exchangeEndpoint3 = 'https://smbackendnodejs.herokuapp.com/getTwitterFollowing'
 
-            axios.get(exchangeEndpoint3 + "?twitterId=" + response.data.data.id + "&token=" + token).then(responseJson => {
+            axios.get(exchangeEndpoint3 + "?twitterId=" + response.data.data.id + "&token=" + token).then(async (responseJson) => {
     
                     console.log("GETTING TWITTER FOLLOWINGS")
                     console.log(responseJson)
